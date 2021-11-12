@@ -2,12 +2,10 @@
 ## Load packages
 rm(list = ls())
 library(data.table)
-#library(survival)
-#library(survminer)
 library(frailtypack)
 
-## Load Dataset
-load("With_Adherence_Dataset/ACE_Inhibitors.RData")
+#Load data
+load("With_Adherence_Dataset_FFU/ACE_Inhibitors.RData")
 
 ## Arrange Dataset
 # time at hospitalization events
@@ -52,50 +50,48 @@ data <- data[order(COD_REG),]
 
 ## Arrange variables
 data$COD_REG= factor(data$COD_REG)
-data$status = factor('na')
-for( i in 1:dim(data)[1]){
-  if(data[i]$event==1)
-    data[i]$status="hospitalization"
-  else {
-    if(data[i]$cens==0)
-      data[i]$status="censored"
-    else
-      data[i]$status="dead"
-  }
-}
 data$SESSO=factor(data$SESSO)
 data$ADERENTE=factor(data$ADERENTE)
 data$etaEvent=as.double(data$etaEvent)
 
-## Pass to gap times between events
+#data[,check:=as.integer(timeEvent)-as.integer(shift(timeEvent,n=-1)),by=COD_REG]
+#data<-data[!(event==1 & check==0)]
 data[,GapEvent:=as.integer(timeEvent)-as.integer(shift(timeEvent)),by=COD_REG]
 data<-data[!is.na(GapEvent) & GapEvent!=0]
 
-# Note: double recordings of same event cause the FrailtyPenal to crash (gapEvent == 0)
+## First 1500 patients
+#codici<-levels(as.factor(data$COD_REG))
+#codici<-codici[1:1500]
+#data<-data[COD_REG %in% codici]
+
+
+# data for terminal events
+dataDeath <- data[event==0]
+
 
 ## remove unused structures
 rm(new)
 rm(temp)
 gc()
 
+
 ## Cox Model via frailtypack (penalized MLE) -- Hospitalization
 mod.cox.gap <- frailtyPenal(Surv(GapEvent,event)~ SESSO + ADERENTE + 
-                            etaEvent + comorbidity,n.knots=12,kappa=1,data=data,
+                            scale(etaEvent) + scale(comorbidity),n.knots=12,kappa=1,data=data,
                             cross.validation = TRUE)
 print(mod.cox.gap)
 summary(mod.cox.gap)
 
 ## Cox Model with random effect -- Hospitalization
 mod.cox.gap.shared <- frailtyPenal(Surv(GapEvent,event)~ cluster(COD_REG) + SESSO + ADERENTE + 
-                            etaEvent + comorbidity,n.knots=12,kappa=1,data=data,
+                            scale(etaEvent) + scale(comorbidity),n.knots=12,kappa=1,data=data,
                             cross.validation = TRUE)
 print(mod.cox.gap.shared)
 summary(mod.cox.gap.shared)
 
 ## Cox Model with random effect -- Death
-data.death <- data[!is.na(cens)]
 mod.cox.death.shared <- frailtyPenal(Surv(GapEvent,cens)~ cluster(COD_REG) + SESSO + ADERENTE + 
-                                     etaEvent + comorbidity,n.knots=10,kappa=1e12,data=data.death,
+                                     scale(etaEvent) + scale(comorbidity),n.knots=12,kappa=1,data=dataDeath,
                                    cross.validation = TRUE)
 print(mod.cox.death.shared)
 summary(mod.cox.death.shared)
@@ -105,37 +101,37 @@ kappa1 <- mod.cox.gap.shared$kappa
 kappa2 <- mod.cox.death.shared$kappa
 
 ## Joint frailty -- Gamma 
+# Not functioning including EtaEvent??
 
 # no etaevent; nknots=8;kappa1*1e15; 
-modJoint.gap <- frailtyPenal(Surv(GapEvent,event)~cluster(COD_REG)+SESSO+ADERENTE+comorbidity+
-                             terminal(cens),formula.terminalEvent=~SESSO+ADERENTE+comorbidity,
-                             data=data,n.knots=8,kappa=c(kappa1*1e15,kappa2))
+#modJoint.gap <- frailtyPenal(Surv(GapEvent,event)~cluster(COD_REG)+SESSO+ADERENTE+scale(etaEvent)+scale(comorbidity)+
+#                             terminal(cens),formula.terminalEvent=~SESSO+ADERENTE++scale(etaEvent)+scale(comorbidity),
+#                             data=data,n.knots=8,kappa=c(kappa1,kappa2))
 # refine
-modJoint.gap1 <- frailtyPenal(Surv(GapEvent,event)~cluster(COD_REG)+SESSO+ADERENTE+comorbidity+
-                               terminal(cens),formula.terminalEvent=~SESSO+ADERENTE+comorbidity,
-                             data=data,n.knots=20,kappa=c(1,1),nb.gh=32,nb.gl=32,
-                             init.B = modJoint.gap$coef)
+#modJoint.gap1 <- frailtyPenal(Surv(GapEvent,event)~cluster(COD_REG)+SESSO+ADERENTE+comorbidity+
+#                               terminal(cens),formula.terminalEvent=~SESSO+ADERENTE+comorbidity,
+#                             data=data,n.knots=20,kappa=c(1,1),nb.gh=32,nb.gl=32,
+#                             init.B = modJoint.gap$coef)
 
-print(modJoint.gap1)
-summary(modJoint.gap1)
+#print(modJoint.gap1)
+#summary(modJoint.gap1)
 
 ## Plots
-plot(modJoint.gap1, event = "Recurrent", type.plot = "Survival", conf.bands
-     = TRUE, pos.legend="bottomright", cex.legend = 0.7, color = 2, median=TRUE,
-     Xlab = "Time", Ylab = "Survival Probability")
+#plot(modJoint.gap1, event = "Recurrent", type.plot = "Survival", conf.bands
+#     = TRUE, pos.legend="bottomright", cex.legend = 0.7, color = 2, median=TRUE,
+#     Xlab = "Time", Ylab = "Survival Probability")
 
 ## Joint Frailty -- LogNormal
-data[,boh:=(etaEvent-mean(etaEvent))/sd(etaEvent)]
-modJoint.gap <- frailtyPenal(Surv(GapEvent,event)~cluster(COD_REG)+SESSO+ADERENTE+comorbidity+boh+
-                               terminal(cens),formula.terminalEvent=~SESSO+ADERENTE+comorbidity+boh,
-                             data=data,n.knots=8,kappa=c(kappa1*1e15,kappa2),RandDist = "LogN")
+modJoint.logNorm <- frailtyPenal(Surv(GapEvent,event)~cluster(COD_REG)+SESSO+ADERENTE+scale(etaEvent)+ scale(comorbidity)+
+                               terminal(cens),formula.terminalEvent=~SESSO+ADERENTE+scale(etaEvent)+scale(comorbidity),
+                             data=data,n.knots=10,kappa=c(kappa1,kappa2),RandDist = "LogN")
 
 
-print(modJoint.gap)
-summary(modJoint.gap)
+print(modJoint.logNorm)
+summary(modJoint.logNorm)
 
 ## Plots
-plot(modJoint.gap, event = "Both", type.plot = "Survival", conf.bands
+plot(modJoint.logNorm, event = "Both", type.plot = "Survival", conf.bands
      = TRUE, pos.legend="bottomright", cex.legend = 0.7, color = 2, median=TRUE,
      Xlab = "Time", Ylab = "Survival Probability")
 

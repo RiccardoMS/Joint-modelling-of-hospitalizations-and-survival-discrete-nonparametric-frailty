@@ -17,7 +17,7 @@ selection = selection[selection$data_rif_ev <= "2011-12-31"]
 as.factor(selection$COD_REG)
 max(selection$data_rif_ev)
 selection = selection[which(selection$data_studio_out-selection$data_rif_ev>=365)]
-selection = selection[which(selection$data_prest - selection$data_rif_ev<365)]
+#selection = selection[which(selection$data_prest - selection$data_rif_ev<365)]
 selection$ATC = selection$class_prest
 selection$ATC[which(selection$tipo_prest==41)] = NA
 selection$classe_pharma = rep("NA", dim(selection)[1])
@@ -45,7 +45,7 @@ for (i in 1:length(selection$pharma)){
     selection[i]$hosp=NA
 }
 selection=selection[,.SD[(max(hosp,na.rm=TRUE)>=1&max(pharma,na.rm=TRUE)>=1)],by=COD_REG]
-save(selection,file="SelectedData.RData")
+save(selection,file="SelectedDataFFU.RData")
 
 # Auxiliary variables
 # follow up time & censoring dummy
@@ -78,7 +78,7 @@ setcolorder(selection,
               "hosp","dataADM","LOS",
               "pharma","ATC","classe_pharma","qt_pharma","DDD","COMBO",
               "death","timeOUT"))
-save(selection, file = "SelectedData.RData")
+save(selection, file = "SelectedDataFFU.RData")
  
 
 

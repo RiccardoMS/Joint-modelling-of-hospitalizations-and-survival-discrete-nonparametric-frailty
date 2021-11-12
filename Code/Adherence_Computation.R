@@ -1,9 +1,11 @@
 ############## Compute Adherence Variables and add them to split dataset   ################
+# Clear
+rm( list = ls ())
 # Load packages
 library(data.table)
 
 # Load drug specific dataset
-load("C:/Users/aughi/Desktop/TESI/Code/Split_Dataset/Beta_Blocking_Agents.RData")
+load("C:/Users/aughi/Desktop/TESI/Code/Split_Dataset/ACE_Inhibitors.RData")
 
 # Compute Adherence
 new = subset(new,!(tipo_prest==30 & is.na(qt_pharma)))
@@ -49,4 +51,4 @@ new[ADERENZA>=0.25 & ADERENZA<0.5]$ADH_LEV=2
 new[ADERENZA>=0.5 & ADERENZA<0.75]$ADH_LEV=3
 new[ADERENZA>=0.75]$ADH_LEV=4
 
-save(new, file="With_Adherence_Dataset/Beta_Blocking_Agents.RData.RData")
+save(new, file="With_Adherence_Dataset/ACE_Inhibitors.RData")
