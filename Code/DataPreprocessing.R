@@ -1,23 +1,39 @@
+#############################################################################################
+############################## Data Preprocessing ###########################################
+#############################################################################################
+## [1] Cohort Selection
+## [2] Additional variables definition
+
+## clean workspace
 rm( list = ls ())
+
+## load libraries
 library(data.table)
 
-# load workspace
+## load data
 load("LombardyDataset.RData")
 
-# data
+## arrange data
 data<-LombardyDataset
 dim(data)
 names(data)
 as.factor(data$COD_REG)
 
-# cohort selection
+## cohort selection
+# hospitalizations and pharmacological prescriptions
 selection = data[data$tipo_prest==41 | data$tipo_prest==30]
 as.factor(selection$tipo_prest)
+
+# final date
 selection = selection[selection$data_rif_ev <= "2011-12-31"]
 as.factor(selection$COD_REG)
 max(selection$data_rif_ev)
+
+# at least one year survival
 selection = selection[which(selection$data_studio_out-selection$data_rif_ev>=365)]
 #selection = selection[which(selection$data_prest - selection$data_rif_ev<365)]
+
+# ATC and labels for pharmacological prescriptions
 selection$ATC = selection$class_prest
 selection$ATC[which(selection$tipo_prest==41)] = NA
 selection$classe_pharma = rep("NA", dim(selection)[1])
@@ -35,7 +51,12 @@ for (i in 1:dim(selection)[1]){
   else
    {selection[i]$classe_pharma=NA}
 }
+
+# keep only selected drugs
 selection = selection[which((!is.na(selection$classe_pharma)&selection$tipo_prest==30)|(selection$tipo_prest==41))]
+
+
+# hospitalizations and prescriptions counter
 selection = selection[,hosp:= sequence(.N), by=list(selection$COD_REG,selection$tipo_prest)][]
 selection = selection[,pharma:= sequence(.N), by=list(selection$COD_REG,selection$tipo_prest)][]
 for (i in 1:length(selection$pharma)){
@@ -44,19 +65,21 @@ for (i in 1:length(selection$pharma)){
   else
     selection[i]$hosp=NA
 }
-selection=selection[,.SD[(max(hosp,na.rm=TRUE)>=1&max(pharma,na.rm=TRUE)>=1)],by=COD_REG]
-save(selection,file="SelectedDataFFU.RData")
 
-# Auxiliary variables
+# at least a hospitalization/pharmacological prescription
+selection=selection[,.SD[(max(hosp,na.rm=TRUE)>=1&max(pharma,na.rm=TRUE)>=1)],by=COD_REG]
+#save(selection,file="SelectedDataFFU.RData")
+
+## Additional variables
 # follow up time & censoring dummy
 selection[,timeOUT:=data_studio_out - data_rif_ev]
 selection[,death:= ifelse(desc_studio_out=="DECEDUTO",1,0)]
 
-#LOS and qt_pharma
+#Length of Stay and quantity of prescription
 selection[tipo_prest==41,LOS:=qt_prest_Sum]
 selection[tipo_prest==30,qt_pharma:=qt_prest_Sum]
 
-#Date of Admission
+# Date of Admission
 selection[tipo_prest==41,dataADM:=data_prest-LOS]
 
 #COMBO & DDD

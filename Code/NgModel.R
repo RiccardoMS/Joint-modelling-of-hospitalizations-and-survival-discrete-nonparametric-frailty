@@ -99,7 +99,7 @@ comorbidity_term <- as.double(dataDeath$comorbidity)
 # Design parameters
 n_beta = 4            # recurrent event covariates
 n_gamma = 4           # terminal event covariates
-n_subjects = 1500    # number of units subject to random effect 
+n_subjects = 3232    # number of units subject to random effect 
 
 # Initial values
 # Omega

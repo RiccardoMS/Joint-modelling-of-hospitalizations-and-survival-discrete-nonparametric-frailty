@@ -1,0 +1,31 @@
+INFORMATIVE CENSORING
+Huang, X. and Wolfe, R. A. (2002). A frailty model for informative censoring. Biometrics 58,
+510{520.
+
+RECURRENT EVENTS WITH TERMINAL EVENT
+Liu, L., Huang, X., Yaroshinsky, A. and Cormier, J. N. (2016). Joint frailty models for
+zero-in
+ated recurrent events in the presence of a terminal event. Biometrics 72, 204{214.
+
+Paulon, G., De Iorio, M., Guglielmi, A. and Ieva, F. (2020). Joint modeling of recurrent
+events and survival: a Bayesian non-parametric approach. Biostatistics 21, 1{14.
+
+
+Tawiah, R., McLachlan, G. J. and Ng, S. K. (2020a). A bivariate joint frailty model with
+mixture framework for survival analysis of recurrent events with dependent censoring and cure
+fraction. Biometrics 76, 753{766.
+
+Tawiah, R., McLachlan, G. J. and Ng, S. K. (2020b). Mixture cure models with time-
+varying and multilevel frailties for recurrent event data. Statistical Methods in Medical Re-
+search 29, 1368{1385.
+
+Amorim, L. D. A. F., and Cai, J. (2014). Modelling recurrent events: a tutorial for analysis in epidemiology. International
+Journal of Epidemiology, 44:324–333.
+
+Rondeau V, Mathoulin-Pelissier S, Jacqmin-Gadda H, Brouste V, Soubeyran P (2007). \Joint
+Frailty Models for Recurring Events and Death Using Maximum Penalized Likelihood Es-
+timation: Application on Cancer Events." Biostatistics, 8(4), 708{721.
+
+
+STILLLL NOT IN BIBLIO
+https://cran.r-project.org/web/packages/coxme/index.html

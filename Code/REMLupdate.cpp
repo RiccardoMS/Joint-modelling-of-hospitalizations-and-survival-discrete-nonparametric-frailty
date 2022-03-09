@@ -1,3 +1,5 @@
+// REML update
+
 #include <Rcpp.h>
 using namespace Rcpp;
 
@@ -17,7 +19,6 @@ NumericVector REMLupdate(NumericVector R, NumericMatrix Bqq, int M) {
   out[2]=T[1]/sqrt(T[0]*T[2]);
   
   return out;
-  
   
 }
 

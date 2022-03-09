@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x -->
+<html xmlns:m="http://www.w3.org/1998/Math/MathML" id="simpleViewer"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood</title>
+        
+
+
+
+
+    
+    <meta name="dc.identifier" content="10.1111/j.0006-341X.2000.01016.x">
+
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/readium-all.css" rel="stylesheet" type="text/css">
+
+<link rel="stylesheet" href="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/app.css" type="text/css">
+
+<style rel="text/css">
+    @import url("/templates/jsp/cloudReader/css/d.css");
+</style>
+<link href="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/css" rel="stylesheet" media="all" onload="this.media=&#39;all&#39;">
+<script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/263124174624252" async=""></script><script async="" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/fbevents.js.download"></script><script async="" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/uwt.js.download"></script><script type="text/javascript" async="" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/f.txt"></script><script type="text/javascript">
+    window.LIT = window.LIT || {};
+    LIT.Reader = LIT.Reader || {};
+    LIT.Reader.LogEnabled = false;
+    window.READER_OFFLINE = navigator && navigator.onLine === false;
+    
+    var verifyOfflineMode = function () {
+        
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            window.READER_OFFLINE = xhr.readyState === 4 && xhr.status !== 200;
+            if (window.READER_OFFLINE && true) {
+                
+                fetch('/cloud-reader/dist/scripts/mathjax/MathJax.min.js').then(function (res) {
+                    res.text().then(function (txt) {
+                        LIT.Reader.MathJaxUrl = window.URL.createObjectURL(new Blob([txt], {'type': 'text/javascript'}));
+                    })
+                })
+            }
+        };
+        xhr.open("HEAD", "/templates/jsp/images/singlePixel.gif?t=" + new Date().getTime());
+        
+        xhr.setRequestHeader("Cache-Control", "no-cache,must-revalidate,max-age=0");
+        xhr.setRequestHeader("Pragma", "no-cache");
+        xhr.send();
+    };
+    
+    verifyOfflineMode();
+
+    var path = (window.location && window.location.pathname) ? window.location.pathname : '';
+
+    
+    path = path.replace(/(.*)\/.*\.[x]?html$/, "$1");
+
+    
+    path = path.charAt(path.length - 1) === '/'
+        ? path.substr(0, path.length - 1)
+        : path;
+
+    
+    var readerResourcesPath = "/cloud-reader/dist";
+
+    var HTTPServerRootFolder =
+        window.location ? (
+            window.location.protocol
+            + "//"
+            + window.location.hostname
+            + (window.location.port ? (':' + window.location.port) : '')
+            + readerResourcesPath
+        ) : ''
+    ;
+</script>
+        
+
+
+
+
+
+
+
+<script type="text/javascript">
+    
+    var eReaderPage = true;
+    var readerAtmEventName = "ereader.fullview";
+    var readerAtmEventData = {"eventData":{"site":{"ip":"131.175.12.86","environment":"LIVE","website":"onlinelibrary.wiley.com","websiteCode":"pericles","serverDate":"2021-10-07"},"identities":[{"type":"InstitutionUser","uuid":"58b47982-b65b-4679-a7ae-3d3523181acb","customerRecords":[{"customerDomain":"ALM-CU","customerNumber":"TEMPMPLICENSE"}]},{"type":"BasicGroup","uuid":"1e79306a-0394-427e-b8ee-e700fe0a77a2","customerRecords":[{"customerDomain":"ALM-CU","customerNumber":"COCHRANEITALIA"}]},{"type":"BasicGroup","uuid":"e623deab-c83b-41e3-84a2-d9f1d46c5f17"},{"type":"RegionUser","uuid":"9926c849-2b29-43c5-a433-c176f68d5ad0"},{"type":"ReferrerUser","uuid":"0951017f-fab2-4eba-9609-e6c1e41dad59"},{"type":"SmartGroupUser","uuid":"a86d27d2-6bcd-4b94-bca5-fe16f4882855"},{"type":"SmartGroupUser","uuid":"756fc162-8722-461f-a077-ebffec4f4fae"},{"type":"SmartGroupUser","uuid":"cf9c85b9-7f3b-4309-aeaa-c41669cabe3b"},{"type":"SmartGroupUser","uuid":"db8b8d10-1aed-4809-b3ee-70938c569014"},{"type":"InstitutionUser","uuid":"83db168c-8f04-4cd1-807c-03563e3116cd","customerRecords":[{"customerDomain":"ALM-CU","customerNumber":"EAL0001251"}]},{"type":"SmartGroupUser","uuid":"cdce41c2-a8de-4a64-a4d9-a85caaaa2314"},{"type":"BasicGroup","uuid":"197fe835-5b5f-4f4e-b8e9-a74d68491a84"},{"type":"SmartGroupUser","uuid":"77da7ca2-c9f3-4f94-9737-922e1d15b7d9"},{"type":"SmartGroupUser","uuid":"ab743440-628f-4964-9216-9983ad3beadf"},{"type":"SmartGroupUser","uuid":"a4187e00-f28e-4754-9a0f-1eb306fb0679"},{"type":"SmartGroupUser","uuid":"c261fc17-ddd0-40b4-b3cf-c86aa69533ae"},{"type":"SmartGroupUser","uuid":"b238ab85-6bb4-49e4-84ca-a0d9f3ee5a35"},{"type":"SmartGroupUser","uuid":"dabe0846-17da-48da-b0b3-8ab2310da5a0"},{"type":"BasicGroup","uuid":"32489ba7-57d6-43ed-b717-a0de5ed5ca0e"},{"type":"SmartGroupUser","uuid":"eabce89b-65c2-4a09-ab7c-bd2b3fea2f10"},{"type":"InstitutionUser","uuid":"b7d1e970-46a7-4b73-bbc9-1399e9cc3b91","customerRecords":[{"customerDomain":"ALM-CU","customerNumber":"MILANO069S"}]},{"type":"BasicGroup","uuid":"f6bf73a6-fd29-4303-8301-24bd8a179b03"},{"type":"SmartGroupUser","uuid":"e2cf122c-6ff9-4167-9a85-09549154cb43"},{"type":"BasicGroup","uuid":"8d568359-32d1-4757-be79-b72d00d11429"},{"type":"SmartGroupUser","uuid":"da88d808-3f7b-4bde-9210-10862b6d121b"},{"type":"InstitutionUser","uuid":"793ac739-ad4b-4ec4-b09e-1d797fd55c0b","customerRecords":[{"customerDomain":"ALM-CU","customerNumber":"DBTEMPE766"}]},{"type":"SmartGroupUser","uuid":"261f34be-39f9-4f9e-8feb-500f73213904"},{"type":"ReferrerUser","uuid":"b3da44b5-3aad-4291-8eca-73ea8ea97a07"},{"type":"SmartGroupUser","uuid":"39f911ce-44b6-4dba-9978-8b2e947a8eb0"},{"type":"RegionUser","uuid":"20d013f5-e22b-4df0-ba93-d6d925db9e32"},{"type":"InstitutionUser","uuid":"cc5479c5-72a9-4263-a6bf-19dbc941ac97","customerRecords":[{"customerDomain":"ALM-CU","customerNumber":"P#CRUI"}]},{"type":"SmartGroupUser","uuid":"b2dbfe27-ecae-4bb6-bb0d-d75e5caa3762"},{"type":"BasicGroup","uuid":"bd2fcf7d-fa23-4396-9340-9ee81267838e"}],"publication":{"item":{"title":"Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood","doi":"10.1111/j.0006-341X.2000.01016.x","access":"full","earliestDate":"2004-05-24","formats":["Abstract","Cited by","First page image","PDF","References"],"topics":[{"taxonomyUri":"global-subject-codes","topicLabel":"MATHEMATICS","topicUri":"ma"},{"taxonomyUri":"global-subject-codes","topicLabel":"Bioinformatics \u0026 Computational Biology","topicUri":"lsg0"},{"taxonomyUri":"global-subject-codes","topicLabel":"Applied Mathematics","topicUri":"ma20"},{"taxonomyUri":"global-subject-codes","topicLabel":"General \u0026 Introductory Mathematics","topicUri":"ma00"},{"taxonomyUri":"global-subject-codes","topicLabel":"Computational Biology","topicUri":"ma23"},{"taxonomyUri":"global-subject-codes","topicLabel":"Curriculum Tools- General","topicUri":"ed60"},{"taxonomyUri":"global-subject-codes","topicLabel":"Mathematics","topicUri":"ed63"},{"taxonomyUri":"global-subject-codes","topicLabel":"LIFE SCIENCES","topicUri":"ls"},{"taxonomyUri":"global-subject-codes","topicLabel":"Biometrics","topicUri":"st21"},{"taxonomyUri":"global-subject-codes","topicLabel":"Applied Probability \u0026 Statistics","topicUri":"st20"},{"taxonomyUri":"global-subject-codes","topicLabel":"Biostatistics","topicUri":"st30"},{"taxonomyUri":"global-subject-codes","topicLabel":"STATISTICS","topicUri":"st"},{"taxonomyUri":"global-subject-codes","topicLabel":"EDUCATION","topicUri":"ed"},{"taxonomyUri":"global-subject-codes","topicLabel":"General \u0026 Introductory Statistics","topicUri":"st00"}]},"group":{"doi":"10.1111/biom.2000.56.issue-4","access":"full","volume":"56","issue":"4","coverDate":"2000-12-01","topics":[{"taxonomyUri":"global-subject-codes","topicLabel":"MATHEMATICS","topicUri":"ma"},{"taxonomyUri":"global-subject-codes","topicLabel":"Bioinformatics \u0026 Computational Biology","topicUri":"lsg0"},{"taxonomyUri":"global-subject-codes","topicLabel":"Applied Mathematics","topicUri":"ma20"},{"taxonomyUri":"global-subject-codes","topicLabel":"General \u0026 Introductory Mathematics","topicUri":"ma00"},{"taxonomyUri":"global-subject-codes","topicLabel":"Computational Biology","topicUri":"ma23"},{"taxonomyUri":"global-subject-codes","topicLabel":"Curriculum Tools- General","topicUri":"ed60"},{"taxonomyUri":"global-subject-codes","topicLabel":"Mathematics","topicUri":"ed63"},{"taxonomyUri":"global-subject-codes","topicLabel":"LIFE SCIENCES","topicUri":"ls"},{"taxonomyUri":"global-subject-codes","topicLabel":"Biometrics","topicUri":"st21"},{"taxonomyUri":"global-subject-codes","topicLabel":"Applied Probability \u0026 Statistics","topicUri":"st20"},{"taxonomyUri":"global-subject-codes","topicLabel":"Biostatistics","topicUri":"st30"},{"taxonomyUri":"global-subject-codes","topicLabel":"STATISTICS","topicUri":"st"},{"taxonomyUri":"global-subject-codes","topicLabel":"EDUCATION","topicUri":"ed"},{"taxonomyUri":"global-subject-codes","topicLabel":"General \u0026 Introductory Statistics","topicUri":"st00"}]},"series":{"title":"Biometrics","doi":"10.1111/(ISSN)1541-0420","access":"full","code":"15410420","issn":"0006-341X","eissn":"1541-0420","topics":[{"taxonomyUri":"gpt-sitename","topicLabel":"wly.stats_000113","topicUri":"wly.stats_000113"},{"taxonomyUri":"global-subject-codes","topicLabel":"MATHEMATICS","topicUri":"ma"},{"taxonomyUri":"global-subject-codes","topicLabel":"Bioinformatics \u0026 Computational Biology","topicUri":"lsg0"},{"taxonomyUri":"global-subject-codes","topicLabel":"Applied Mathematics","topicUri":"ma20"},{"taxonomyUri":"global-subject-codes","topicLabel":"General \u0026 Introductory Mathematics","topicUri":"ma00"},{"taxonomyUri":"global-subject-codes","topicLabel":"Computational Biology","topicUri":"ma23"},{"taxonomyUri":"global-subject-codes","topicLabel":"Curriculum Tools- General","topicUri":"ed60"},{"taxonomyUri":"global-subject-codes","topicLabel":"Mathematics","topicUri":"ed63"},{"taxonomyUri":"global-subject-codes","topicLabel":"LIFE SCIENCES","topicUri":"ls"},{"taxonomyUri":"global-subject-codes","topicLabel":"Biometrics","topicUri":"st21"},{"taxonomyUri":"global-subject-codes","topicLabel":"Applied Probability \u0026 Statistics","topicUri":"st20"},{"taxonomyUri":"global-subject-codes","topicLabel":"Biostatistics","topicUri":"st30"},{"taxonomyUri":"global-subject-codes","topicLabel":"STATISTICS","topicUri":"st"},{"taxonomyUri":"global-subject-codes","topicLabel":"EDUCATION","topicUri":"ed"},{"taxonomyUri":"global-subject-codes","topicLabel":"General \u0026 Introductory Statistics","topicUri":"st00"},{"taxonomyUri":"gpt-zonename","topicLabel":"biometrics_BIOM","topicUri":"biometrics_biom"}]}},"tokens":{"tokenUsed":false}}};
+    
+    var digitalData = window.digitalData ? digitalData : {};
+    digitalData.event = digitalData.event || [];
+</script>
+<script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/satelliteLib-c1ac050bbdc647f13a62578e71f0d817f8a6cbb5.js.download"></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/AppMeasurement.min.js.download" async=""></script>
+        
+
+
+
+
+
+    <style type="text/css"></style><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/js" async="true"></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/RC98520b4f5a114a749f840842120e53c0-source.min.js.download" async=""></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/RCab4fcd0849cd455d8ca245a2eab14a3c-source.min.js.download" async=""></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/RC8ca40e7e29e34f7bbd82f60296efd00d-source.min.js.download" async=""></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/f(1).txt"></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/RC6e4e9fb26c37495b937e35b1cd336268-source.min.js.download" async=""></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/RCbdd867df82b64bc3a9fa77d7ffada36e-source.min.js.download" async=""></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/RC18fdec74fd9e44a1b71cc8ee065f7592-source.min.js.download" async=""></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/RC68b80b4008274d8f86257e5c557a90b9-source.min.js.download" async=""></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/RC94e314a8a6aa47dab5df82d75e37733f-source.min.js.download" async=""></script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/RC33a53d17861d4e31b03c89ef49413e2b-source.min.js.download" async=""></script></head>
+    
+    <body>
+        
+
+
+
+
+
+
+
+
+
+<noscript>
+    <div id="alert_box" class="popup_container full noScript">
+        <div class="popup_content">
+            <div class="flex-container">
+                <div class="text">
+                    <span class="popupIcon icon material-icons" data-type="">error_outline</span>
+                    <div>
+                        <h1 class="popupTitle">JavaScript disabled</h1>
+                        <p class="popupDescription">You have to enable JavaScript in your browser's settings in order to use the eReader.</p>
+                        
+                            <p class="popupDescription">Or try downloading the content offline</p>
+                            <a href="/doi/pdfdirect/10.1111/j.0006-341X.2000.01016.x?download=true" target="_blank" class="btn--bordered__light">DOWNLOAD</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</noscript>
+        <nav id="app-navbar" class="navbar isFixed" role="banner" aria-label="Toolbar"><div class="btn-group navbar-left">
+        <div class="grouped hide-lg lpanel_toggle_wrapper">
+    <button id="leftPanelmobile" class="l-panel--trigger btn" title="Publication Info [i]" type="button" tabindex="0" accesskey="i">
+        <span class="icon material-icons" aria-hidden="true">menu</span>
+        <span class="icon material-icons expanded" aria-hidden="true">close</span>
+    </button>
+</div>
+<div id="readium-left-panel" class="tabs" aria-label="" role="navigation"><div class="lpbutton show-lg">
+    <div class="l-panel--button-container">
+        <button class="l-panel--trigger btn--rounded btn" id="leftPanelbtn" title="Publication Info [i]" aria-label="Toggle left panel" data-tooltip-position="right" type="button" tabindex="0" accesskey="i">
+            <span class="icon reader-double-arrow flip-horizontal" aria-hidden="true"></span>
+        </button>
+
+            <button class="btn--rounded btn--cta__light btn" id="infoDesktop" title="Details" aria-label="Toggle Details panel" data-tooltip-position="right" data-trigger="#info" type="button" tabindex="0" accesskey="">
+                <span class="icon material-icons" aria-hidden="true">info
+                    
+                    
+                </span>
+            </button>
+            <button class="btn--rounded btn--cta__light btn" id="chaptersDesktop" title="Outline" aria-label="Toggle Outline panel" data-tooltip-position="right" data-trigger="#chapters" type="button" tabindex="0" accesskey="">
+                <span class="icon material-icons" aria-hidden="true">list
+                    
+                    
+                </span>
+            </button>
+            <button class="btn--rounded btn--cta__light btn" id="filesDesktop" title="Materials" aria-label="Toggle Materials panel" data-tooltip-position="right" data-trigger="#files" type="button" tabindex="0" accesskey="">
+                <span class="icon reader-material-folder" aria-hidden="true">
+                    
+                    
+                </span>
+            </button>
+            <button class="btn--rounded btn--cta__light btn" id="linksDesktop" title="Links" aria-label="Toggle Links panel" data-tooltip-position="right" data-trigger="#links" type="button" tabindex="0" accesskey="">
+                <span class="icon material-icons rotate-135" aria-hidden="true">link
+                    
+                    
+                </span>
+            </button>
+    </div>
+</div>
+
+<div class="overflow-container">
+    <div class="extra_actions show-sm-flex">
+        <button class="l-panel--trigger btn--action__text btn" type="button" tabindex="0" accesskey="">
+            <span class="tab-text">CLOSE</span>
+        </button>
+    </div>
+
+    <div class="l-panel-tabs-container">
+        <div class="pubDetails hide-lg">
+            <h4 class="pub_type">article</h4>
+            <h3 class="pub_title js__book-title" title="Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood">Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood</h3>
+        </div>
+
+        <ul class="drawerMenu dark slider" role="menu">
+            <li class="list-item d-block" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+                <button id="info" class="drawerMenu--trigger list-button toggle-submenu btn" type="button" tabindex="0" accesskey="">
+                <span class="back-btn btn--action__text">
+                    <span class="icon material-icons hidden-desktop" aria-hidden="true">navigate_before</span>
+                    BACK
+                </span>
+                    <span class="icon material-icons" aria-hidden="true">info</span>
+                    <span class="tab-text">Details</span>
+                </button>
+
+                <div id="info-tab-pane" class="submenu"><div class="paddedPane">
+    <div class="stickify show-lg">
+        <h3 class="primaryTitle">Details</h3>
+    </div>
+
+
+    <div class="item-info">
+        <div class="metadata">
+   <div class="cover"><img src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/biom.v77.3.cover.gif" alt="Cover Image" class="cover"></div>
+   <h6>ARTICLE</h6>
+   <h4 class="title">Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood</h4>
+   <div class="authors"><span class="author">Samuli Ripatti, </span><span class="author">Juni Palmgren</span></div><a href="https://onlinelibrary.wiley.com/action/showCitFormats?doi=10.1111%2Fj.0006-341X.2000.01016.x&amp;mobileUi=0" class="btn btn--secondary citation_btn " target="_blank" accesskey="c" aria-label="export citation">
+    <span class="icon material-icons">format_quote</span>
+    <span class="text">CITE</span>
+</a>
+
+   <div class="publication-details">
+      <div class="copyright"></div><a class="" target="_blank" accesskey="c" aria-label="doi" href="https://doi.org/10.1111/j.0006-341X.2000.01016.x">https://doi.org/10.1111/j.0006-341X.2000.01016.x</a><div class="details-section">
+         <div class="details-entry"><span class="details-label">Published in</span><span class="details-value">Biometrics</span></div>
+         <div class="details-entry"><span class="details-label" style="">Publisher</span><span class="details-value">John Wiley &amp; Sons, Ltd</span></div>
+         <div class="issn">
+            <div class="details-entry"><span class="details-label">ISSN</span><span class="details-value">0006-341X</span></div>
+         </div>
+         <div class="details-entry"><span class="details-label">eISSN</span><span class="details-value">1541-0420</span></div>
+         <div class="details-entry"><span class="details-label">Published</span><span class="details-value">24 May 2004</span></div>
+         <div class="details-entry"><span class="details-label">Volume</span><span class="details-value">56</span></div>
+         <div class="details-entry"><span class="details-label">Issue</span><span class="details-value">4</span></div>
+         <div class="details-entry"><span class="details-label">Pages</span><span class="details-value">1016
+                    -
+                    1022</span></div>
+      </div>
+   </div>
+   <div class="abstract">
+      <p><b>Summary. </b> There exists a growing literature on the estimation of gamma distributed multiplicative shared frailty models. There is, however, often a need to model more complicated frailty structures, but attempts to extend gamma frailties run into complications. Motivated by hip replacement data with a more complicated dependence structure, we propose a model based on multiplicative frailties with a multivariate log-normal joint distribution. We give a justification and an estimation procedure for this generally structured frailty model, which is a generalization of the one presented by McGilchrist (1993, <i>Biometrics</i><b>49</b>, 221-225). The estimation is based on Laplace approximation of the likelihood function. This leads to estimating equations based on a penalized fixed effects partial likelihood, where the marginal distribution of the frailty terms determines the penalty term. The tuning parameters of the penalty function, i.e., the frailty variances, are estimated by maximizing an approximate profile likelihood. The performance of the approximation is evaluated by simulation, and the frailty model is fitted to the hip replacement data.</p>
+   </div>
+</div>
+        
+    </div>
+</div></div>
+            </li>
+
+            <li class="list-item d-block" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+                <button id="chapters" class="drawerMenu--trigger list-button toggle-submenu btn" type="button" tabindex="0" accesskey="">
+                    <span class="back-btn btn--action__text">
+                        <span class="icon material-icons hidden-desktop" aria-hidden="true">navigate_before</span>
+                        BACK
+                    </span>
+                    <span class="icon material-icons" aria-hidden="true">list</span>
+                    <span class="tab-text">Outline</span>
+                </button>
+
+                <div id="readium-toc-body" class="submenu"><div class="paddedPane error-pane">
+        <h3 class="primaryTitle show-lg">OUTLINE</h3>
+    <div class="panel-error">
+        <span class="error-icon icon material-icons" data-type="content">sentiment_very_dissatisfied</span>
+        <div class="error-text">This publication does not have an outline.</div>
+    </div>
+</div>
+</div>
+            </li>
+
+            <li class="list-item show-lg" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+                <button id="files" class="drawerMenu--trigger list-button toggle-submenu btn" type="button" tabindex="0" accesskey="">
+                <span class="back-btn btn--action__text">
+                    <span class="icon material-icons hidden-desktop" aria-hidden="true">navigate_before</span>
+                    BACK
+                </span>
+                    <span class="icon material-icons" aria-hidden="true">perm_media</span>
+                    <span class="tab-text">Materials</span>
+                </button>
+                <div id="files-tab-pane" class="submenu"><div class="paddedPane scrollToTop">
+    <div class="stickify">
+        <h3 class="primaryTitle">Materials</h3>
+        <ul class="tab-nav active" role="tablist">
+            <!-- if changes are made in these files, update left-panel-mobile.html -->
+            <li role="tab">
+                <a class="figures active" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x#figures-tab-pane" role="tab" aria-controls="figures-tab-pane" aria-disabled="false" aria-selected="true" tabindex="0">
+                    <span class="tab-text">FIGURES</span>
+                    <span class="icon material-icons pull-right hidden-desktop" aria-hidden="true" aria-labelledby="">navigate_next</span>
+                </a>
+            </li>
+            <li role="tab">
+                <a class="supplementary" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x#supplementary-tab-pane" aria-selected="false" role="tab" aria-controls="supplementary-tab-pane" aria-disabled="false" tabindex="0">
+                    <span class="tab-text">SUPPLEMENTS</span>
+                    <span class="icon material-icons pull-right hidden-desktop" aria-hidden="true" aria-labelledby="">navigate_next</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tab-content">
+        <div class="panels" data-vport="1024" data-panel-desktop="figures">
+            <div id="figures-tab-pane" class="tab-pane active has-error" role="tabpanel" aria-label="" aria-hidden="false" tabindex="0"><div class="paddedPane error-pane">
+    <div class="panel-error">
+        <span class="error-icon icon material-icons" data-type="content">image</span>
+        <div class="error-text">Figures for this publication are not available for display.</div>
+    </div>
+</div>
+</div>
+        </div>
+        <div class="panels" data-vport="1024" data-panel-desktop="supplements">
+            <div id="supplementary-tab-pane" class="tab-pane has-error" role="tabpanel" aria-hidden="true" aria-label="" tabindex="0"><div class="paddedPane error-pane">
+    <div class="panel-error">
+        <span class="error-icon icon material-icons" data-type="content">image</span>
+        <div class="error-text">Supplementary materials are not available for display.</div>
+    </div>
+</div>
+</div>
+        </div>
+    </div>
+</div></div>
+            </li>
+            <li class="list-item d-block hide-lg" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+                <button id="figures" class="drawerMenu--trigger list-button toggle-submenu btn" type="button" tabindex="0" accesskey="">
+                <span class="back-btn btn--action__text">
+                    <span class="icon material-icons hidden-desktop" aria-hidden="true">navigate_before</span>
+                    BACK
+                </span>
+                    <span class="icon material-icons" aria-hidden="true">image</span>
+                    <span class="tab-text">Figures</span>
+                </button>
+                <div class="submenu hide-lg">
+                    <div class="paddedPane">
+                        <div data-vport="1024" data-panel-mobile="figures"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-item d-block hide-lg" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+                <button id="supplementary" class="drawerMenu--trigger list-button toggle-submenu btn" type="button" tabindex="0" accesskey="">
+                <span class="back-btn btn--action__text">
+                    <span class="icon material-icons hidden-desktop" aria-hidden="true">navigate_before</span>
+                    BACK
+                </span>
+                    <span class="icon material-icons" aria-hidden="true">perm_media</span>
+                    <span class="tab-text">Supplements</span>
+                </button>
+                <div class="submenu hide-lg">
+                    <div class="paddedPane">
+                        <div data-vport="1024" data-panel-mobile="supplements"></div>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="list-item show-lg" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+                <button id="links" class="drawerMenu--trigger list-button toggle-submenu btn" type="button" tabindex="0" accesskey="">
+                <span class="back-btn btn--action__text">
+                    <span class="icon material-icons hidden-desktop" aria-hidden="true">navigate_before</span>
+                    BACK
+                </span>
+                    <span class="icon material-icons rotate-135" aria-hidden="true">link</span>
+                    <span class="tab-text">Links</span>
+                </button>
+                <div id="links-tab-pane" class="submenu"><div class="paddedPane">
+    <div class="stickify">
+        <h3 class="primaryTitle">Links</h3>
+        <ul class="tab-nav active" role="tablist">
+            <!-- if changes are made in these files, update left-panel-mobile.html -->
+            <li role="tab">
+                <a class="references" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x#references-tab-pane" role="tab" aria-controls="references-tab-pane" aria-disabled="false" aria-selected="false" tabindex="0">
+                    <span class="tab-text">REFERENCES</span>
+                    <span class="icon material-icons pull-right hidden-desktop" aria-hidden="true" aria-labelledby="">navigate_next</span>
+                </a>
+            </li>
+            <li role="tab">
+                <a class="citations" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x#citations-tab-pane" aria-selected="false" role="tab" aria-controls="citations-tab-pane" aria-disabled="false" tabindex="0">
+                    <span class="tab-text">CITED BY</span>
+                    <span class="icon material-icons pull-right hidden-desktop" aria-hidden="true" aria-labelledby="">navigate_next</span>
+                </a>
+            </li>
+            <li role="tab">
+                <a class="recommended" href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x#recommended-tab-pane" aria-selected="false" role="tab" aria-controls="recommended-tab-pane" aria-disabled="false" tabindex="0">
+                    <span class="tab-text">RECOMMENDED</span>
+                    <span class="icon material-icons pull-right hidden-desktop" aria-hidden="true" aria-labelledby="">navigate_next</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="tab-content has-tabs">
+        <div class="panels" data-vport="1024" data-panel-desktop="ref">
+            <div id="references-tab-pane" class="tab-pane" role="tabpanel" aria-label="" aria-hidden="true" tabindex="0">
+                
+            </div>
+        </div>
+        <div class="panels" data-vport="1024" data-panel-desktop="cit">
+            <div id="citations-tab-pane" class="tab-pane" role="tabpanel" aria-hidden="true" aria-label="" tabindex="0"></div>
+        </div>
+        <div class="panels" data-vport="1024" data-panel-desktop="recommended">
+            <div id="recommended-tab-pane" class="tab-pane" role="tabpanel" aria-hidden="true" aria-label="" tabindex="0">
+                
+            </div>
+        </div>
+    </div>
+</div></div>
+            </li>
+            <li class="list-item d-block hide-lg" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+                <button id="references" class="drawerMenu--trigger list-button toggle-submenu btn" type="button" tabindex="0" accesskey="">
+                <span class="back-btn btn--action__text">
+                    <span class="icon material-icons hidden-desktop" aria-hidden="true">navigate_before</span>
+                    BACK
+                </span>
+                    <span class="icon material-icons rotate-135" aria-hidden="true">link</span>
+                    <span class="tab-text">References</span>
+                </button>
+                <div class="submenu hide-lg">
+                    <div class="paddedPane">
+                        <div data-vport="1024" data-panel-mobile="ref"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-item d-block hide-lg" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+                <button id="citations" class="drawerMenu--trigger list-button toggle-submenu btn" type="button" tabindex="0" accesskey="">
+                <span class="back-btn btn--action__text">
+                    <span class="icon material-icons hidden-desktop" aria-hidden="true">navigate_before</span>
+                    BACK
+                </span>
+                    <span class="icon material-icons" aria-hidden="true">format_quote</span>
+                    <span class="tab-text">Cited by</span>
+                </button>
+                <div class="submenu hide-lg">
+                    <div class="paddedPane">
+                        <div data-vport="1024" data-panel-mobile="cit"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-item d-block hide-lg" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+                <button id="recommended" class="drawerMenu--trigger list-button toggle-submenu btn" type="button" tabindex="0" accesskey="">
+                <span class="back-btn btn--action__text">
+                    <span class="icon material-icons hidden-desktop" aria-hidden="true">navigate_before</span>
+                    BACK
+                </span>
+                    <span class="icon material-icons" aria-hidden="true">more_horiz</span>
+                    <span class="tab-text">Recommended</span>
+                </button>
+                <div class="submenu hide-lg">
+                    <div class="paddedPane">
+                        <div data-vport="1024" data-panel-mobile="recommended"></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+        <div class="grouped hide-sm"><a aria-label="View in website" class="open-in-website js__fullSite btn btn--light" href="https://onlinelibrary.wiley.com/doi/10.1111/j.0006-341X.2000.01016.x" id="" target="_blank" title="" data-tooltip-position="">
+    <span class="icon material-icons">open_in_new</span>    <span class="tab-text">View in Publisher's site</span>
+</a>
+</div>
+</div>
+
+
+<div class="btn-group navbar-center">
+        <div class="dropdown-widget paging grouped" data-persist="">
+    <button id="" class="dropdown-trigger btn btn--light fxl" title="Select page [p]" aria-label="Select node" data-tooltip-position="" aria-haspopup="true" type="button" tabindex="0" accesskey="p" aria-expanded="false">
+        <span class="d-none d-md-inline-block pagination_button_text">Page</span><span class="cpage">1</span><span class="separator">/</span><span class="allpages">7</span><span class="animated_arrow_down"></span>
+    </button>
+    <div id="" class="dropdown-content dropdown-list medium" aria-label="" aria-labelledby="">
+        <div class="dropdown-content-wrapper scrollToTop">
+            <ul role="list">
+    <li class="list-item">
+        <button class="nodeTraverse next list-button btn" type="button" tabindex="0" accesskey="">
+            <span class="icon material-icons" aria-hidden="true">skip_next</span>
+            <span class="tab-text">Next</span>
+        </button>
+    </li>
+    <li class="list-item">
+        <button class="nodeTraverse previous list-button btn" type="button" tabindex="0" accesskey="" disabled="disabled">
+            <span class="icon material-icons" aria-hidden="true">skip_previous</span>
+            <span class="tab-text">Previous</span>
+        </button>
+    </li>
+    <li class="list-item">
+        <button class="js__paging-first list-button btn" type="button" tabindex="0" accesskey="">
+            <span class="icon reader-previous" aria-hidden="true"></span>
+            <span class="tab-text">Go to start</span>
+        </button>
+    </li>
+    <li class="list-item">
+        <button class="js__paging-last list-button btn" type="button" tabindex="0" accesskey="">
+            <span class="icon reader-next" aria-hidden="true"></span>
+            <span class="tab-text">Go to the end</span>
+        </button>
+    </li>
+    <li class="list-item content-item">
+        <div class="page-selector">
+                    <span class="list_title">GO TO PAGE
+                        
+                    </span>
+            <div role="group" aria-label="Go to specified page">
+                <input type="number" name="page-select" value="" id="page_num" min="0" max="7" placeholder="Number" aria-label="page number" data-no-tooltip="">
+                <button id="gotopage" class="js__paging-select btn--cta__light btn" title="Go to specified page" data-alt-title="Go to specified node" type="button" tabindex="0" accesskey="">
+                    <span class="icon reader-double-arrow flip-horizontal" aria-hidden="true"></span>
+                </button>
+                <div class="errors"></div>
+            </div>
+        </div>
+    </li>
+    <li class="list-item reflow content-item">
+        <div class="row content-wrapper infoRow">
+            <span class="icon material-icons">info_outlined</span>
+            <p>Nodes are locations in the document that facilitate reading from beginning to end. You can
+                navigate node
+                by node or select one to jump to.</p>
+        </div>
+    </li>
+</ul>
+
+        </div>
+    </div>
+</div>
+
+        <div class="dropdown-widget grouped reading_options settings-dialog reading-options-navbar" data-persist="">
+    <button id="readingOptionsBtn" class="dropdown-trigger btn btn--light" title="Reading options [r]" aria-label="Select node" data-tooltip-position="" aria-haspopup="true" type="button" tabindex="0" accesskey="r" aria-expanded="false">
+        <span class="icon material-icons reflow" aria-hidden="true">format_size</span><span class="icon reader-reading-options fxl" aria-hidden="true"></span>
+    </button>
+    <div id="" class="dropdown-content dropdown-list slim" aria-label="" aria-labelledby="readingOptionsBtn">
+        <div class="dropdown-content-wrapper scrollToTop">
+            <div class="options-fields reflow">
+    <div class="option-field option-alignment">
+        <span class="option-title">Alignment</span>
+        <div class="option-items">
+            <div class="toggle-btn-group can-unchecked" role="radiogroup" aria-label="Text alignment" tabindex="0">
+                <input type="radio" id="align-left" name="justify" value="auto" aria-label="Align left">
+                <label for="align-left">
+                    <span class="icon material-icons">format_align_left</span>
+                </label>
+                <input type="radio" id="align-justify" name="justify" value="justify" aria-label="Justify">
+                <label for="align-justify">
+                    <span class="icon material-icons">format_align_justify</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="option-field option-font-size">
+        <span class="option-title">Font Size</span>
+        <div class="option-items" role="group" aria-label="Font size">
+            <button class="btn btn--rounded btn--secondary__light font-btn minus" aria-label="Decrease" type="button" tabindex="0" accesskey="">
+                <span class="icon material-icons" aria-hidden="true">remove</span>
+            </button>
+            <button class="btn btn--rounded btn--secondary__light font-btn plus" aria-label="Increase" type="button" tabindex="0" accesskey="">
+                <span class="icon material-icons" aria-hidden="true">add</span>
+            </button>
+            <input type="hidden" id="font-size-input" value="100">
+        </div>
+    </div>
+
+    <div class="option-field options-hyphenation">
+        <div class="toggle-checkbox">
+            <input class="light" type="checkbox" name="hyphenate" id="hyphenate-checkbox">
+            <label class="option-title" for="hyphenate-checkbox">Hyphenation</label>
+        </div>
+    </div>
+
+    <div class="options-return-defaults">
+        <button class="btn btn-link" type="button" tabindex="0" accesskey="">
+            <i class="material-icons icon" aria-hidden="true">close</i>
+            Return to default styles
+        </button>
+    </div>
+</div>
+<div class="options-fields">
+    <div class="option-field option-reading-flow">
+        <span class="option-title">Reading Flow</span>
+        <div class="option-items">
+            <div class="toggle-btn-group" role="radiogroup" aria-label="Reading flow">
+                <input type="radio" id="flow-vertical" name="scrolling" value="continuous" aria-label="Vertical continuous scroll">
+                <label for="flow-vertical">
+                    <span class="icon material-icons">swap_vert</span>
+                </label>
+                <input type="radio" id="flow-horizontal" name="scrolling" value="auto" aria-label="Horizontal paginated">
+                <label for="flow-horizontal">
+                    <span class="icon material-icons">swap_horiz</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="option-field d-none d-md-block option-columns">
+        <span class="option-title reflow">Columns</span>
+        <span class="option-title fxl">Pages</span>
+        <div class="option-items">
+            <div class="toggle-btn-group" role="radiogroup" aria-label="Columns count">
+                <input type="radio" id="columns-single" disabled="" name="display-format" value="single" aria-label="single">
+                <label for="columns-single">
+                    <span class="icon material-icons reflow">view_headline</span>
+                    <span class="icon reader-reading-options fxl" aria-hidden="true"></span>
+                </label>
+                <input type="radio" id="columns-default" disabled="" name="display-format" value="auto" aria-label="Double">
+                <label for="columns-default">
+                    <span class="icon material-icons reflow">vertical_split</span>
+                    <span class="icon material-icons fxl">chrome_reader_mode</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</div>
+
+</div>
+
+
+<div class="btn-group navbar-right">
+    <div class="left">
+        <div class="zoom-wrapper fxl grouped left d-none d-md-flex">
+
+    <button class="zoom-btn width btn--light btn" title="Fit Width [h]" aria-label="fit width " type="button" tabindex="0" accesskey="h">
+        <span class="icon material-icons" aria-hidden="true">fullscreen</span>
+    </button>
+    <button class="zoom-btn height d-none btn--light btn" title="Fit Height [h]" aria-label="fit height" type="button" tabindex="0" accesskey="h">
+        <span class="icon material-icons" aria-hidden="true">fullscreen_exit</span>
+    </button>
+
+    <input tabindex="0" type="text" value="100%" disabled="" class="d-none">
+    <button class="zoom-btn out btn--light btn" title="Zoom Out [z]" aria-label="zoom out" type="button" tabindex="0" accesskey="z">
+        <span class="icon material-icons" aria-hidden="true">remove_circle_outline</span>
+    </button>
+    <button class="btn zoom-btn in btn--light" title="Zoom In [x]" aria-label="zoom in" type="button" tabindex="0" accesskey="x">
+        <span class="icon material-icons" aria-hidden="true">add_circle_outline</span>
+    </button>
+</div>
+<div></div>
+
+    </div>
+    <div class="grouped center">
+        <div class="dropdown-widget search" data-persist="true">
+    <button id="" class="dropdown-trigger btn btn--light search-trigger" title="Search [s]" aria-label="Search document" data-tooltip-position="" aria-haspopup="true" type="button" tabindex="0" accesskey="s" aria-expanded="false">
+        <span class="icon material-icons" aria-hidden="true">search</span>
+    </button>
+    <div id="" class="dropdown-content " aria-label="" aria-labelledby="">
+        <div class="dropdown-content-wrapper scrollToTop">
+            <div class="row">
+    <div class="topRow">
+        <form method="post" action="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x#" role="search">
+            <div class="fieldWithButton">
+                <input class="search-field" placeholder="Search this document...">
+                <button type="submit" class="btn--cta__light small submit">
+                    <span class="d-none d-md-inline-block">SEARCH</span>
+                    <span class="d-inline-block d-md-none icon material-icons">search</span>
+                </button>
+            </div>
+        </form>
+        <button type="button" class="close-search-btn d-inline-flex btn dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            <span class="d-inline-block icon material-icons">close</span>
+        </button>
+    </div>
+    <div class="results"></div>
+</div>
+
+        </div>
+    </div>
+</div>
+<div class="d-inline-flex clipboard share-access-navbar"><button id="shareTrigger" class="btn shareAccessUrl btn--light" title="Share access [j]" aria-label="share access" data-tooltip-position="" type="button" tabindex="0" accesskey="j">
+    <span class="icon material-icons" aria-hidden="true">group_add</span>
+</button>
+<div class="d-none"><button class="shareAccessUrlClip btn" type="button" tabindex="0" accesskey="">Copy Access</button></div>
+</div><div class="dropdown-widget " data-persist="">
+    <button id="settings_button" class="dropdown-trigger btn btn--light rpanel_toggle" title="More [o]" aria-label="view more options" data-tooltip-position="bottom" aria-haspopup="true" type="button" tabindex="0" accesskey="o" aria-expanded="false">
+        <span class="icon material-icons" aria-hidden="true">more_horiz</span>
+    </button>
+    <div id="readium-right-panel" class="dropdown-content dropdown-list wide" aria-label="" aria-labelledby="settings_button">
+        <div class="dropdown-content-wrapper scrollToTop">
+            <ul class="drawerMenu slider" role="menu">
+            <li class="list-item print" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+    <button id="" class="btn drawerMenu--trigger list-button" title="Print document" aria-label="Print document" data-tooltip-position="" type="button" tabindex="0" accesskey="">
+    <span class="icon material-icons" aria-hidden="true">print</span><span class="tab-text">Print document</span>
+</button>
+
+
+</li>
+
+        <li class="separator offlineSeparator" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">Offline reading</li>
+
+<li class="list-item offline_library general" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+    <div class="offline drawerMenu--trigger list-button trigger" data-disable-offline="true" aria-disabled="false">
+
+        <div class="icons stack-icons">
+            <span class="icon idle reader-offline_pin"></span>
+            <svg class="adding removing progress-ring" height="24" width="24" viewBox="0 0 24 24">
+                <circle class="progress-ring__track" stroke-width="2" fill="transparent" r="10" cx="12" cy="12"></circle>
+                <circle class="progress-ring__circle" transform="rotate(-90 12 12)" stroke-dashoffset="0" stroke-dasharray="0" stroke-width="2" fill="transparent" r="10" cx="12" cy="12"></circle>
+            </svg>
+            <button class="cancel adding btn" type="button" tabindex="0" accesskey="">
+                <span class="icon material-icons" aria-hidden="true">stop</span>
+            </button>
+            <span class="icon material-icons done">offline_pin</span>
+        </div>
+
+        <button class="general btn idle" type="button" tabindex="0" accesskey="">
+            <span class="tab-text">Save for offline reading</span>
+        </button>
+        <span class="adding tab-text">Saving for offline reading</span>
+        <div class="desc idle adding">
+            &nbsp;•&nbsp;
+            <span class="file-desc">2.4 MB</span>
+        </div>
+        <div class="done">
+            <span class="tab-text">Saved for offline reading</span>
+            <button class="remove btn" type="button" tabindex="0" accesskey="">Remove</button>
+        </div>
+
+        <div class="removing">
+            <span class="tab-text">Removing from offline documents</span>
+        </div>
+    </div>
+</li>
+
+<li class="list-item offline_documents " role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+    <a href="https://onlinelibrary.wiley.com/reader/library" class="drawerMenu--trigger list-button btn" target="_blank" aria-label="View Offline documents">
+        <span class="icon material-icons">library_books</span>
+        <span class="tab-text">View Offline documents</span>
+    </a>
+</li>
+
+        <li class="list-item user_id" role="menuitem" aria-haspopup="true" aria-expanded="false" aria-disabled="false">
+    
+<a href="https://onlinelibrary.wiley.com/action/showLogin?redirectUri=%2Fdoi%2Fepdf%2F10.1111%2Fj.0006-341X.2000.01016.x" class="btn--action__text-secondary">Login</a>
+<span class="btn--action__text-secondary no-hover">/</span>
+<a href="https://onlinelibrary.wiley.com/action/registration?redirectUri=%2Fdoi%2Fepdf%2F10.1111%2Fj.0006-341X.2000.01016.x" class="btn--action__text-secondary">Register</a>
+
+</li>
+
+
+</ul>
+
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="grouped right">
+        <a aria-label="Download PDF • 637.1 KB" class="navbar-download btn btn--cta_roundedColored" href="https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.0006-341X.2000.01016.x?download=true" id="" target="_blank" title="Download [g]" accesskey="g" data-tooltip-position="bottom" data-single-download="true" data-download-files-key="pdf">
+    <span class="icon material-icons">get_app</span>
+</a>
+
+    </div>
+</div>
+
+
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0.03571428571428571" aria-valuemin="1" aria-valuemax="100" style="width: 54.8571px;"></div>
+</div>
+</nav>
+        <div id="app-container"><div id="reading-area" role="main" class="isFixed scroll">
+    <div id="epub-reader-container">
+        <div id="epub-reader-frame" style="overflow: hidden;">
+        <div id="reflowable-book-frame" class="clearfix book-frame reflowable-book-frame"><div id="scrolled-content-frame" tabindex="-1" style="overflow: auto; width: 100%; height: 100%; position: relative; inset: 0px;"><div class="content-doc-frame cover customScaled" style="transform: none; height: 1514.04px; width: 1161.26px; left: 0px; top: 0px;"><div class="scaler" style="height: 1514.04px; width: 1161.26px; transform: scale(1); transform-origin: 0px 0px;"><div class="page-loading-bar" style="visibility: visible; display: none;"><div class="page-loading-bar_back"><div class="page-loading-bar_front" style="width: 100%;"></div></div></div><iframe enable-annotation="enable-annotation" allowfullscreen="allowfullscreen" scrolling="no" class="iframe-fixed visible" tabindex="-1" style="border-bottom: 1px dashed silver; border-top: 1px dashed silver; visibility: visible; width: 1161.26px;" data-src="https://onlinelibrary.wiley.com/reader/content/1616b07440f/10.1111/j.0006-341X.2000.01016.x/format/pdf/OEBPS/pages/1.page.xhtml" data-index="0" data-baseuri="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x" data-loaduri="https://onlinelibrary.wiley.com/reader/content/1616b07440f/10.1111/j.0006-341X.2000.01016.x/format/pdf/OEBPS/pages/1.page.xhtml" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/b7ef4fba-a0d0-4676-a447-2025009a7682.html" data-viewport-width="632" data-viewport-height="824" current-scale="1.8374328440451229" title="EPUB" aria-label="EPUB"></iframe></div></div><div class="content-doc-frame customScaled" style="transform: none; height: 1514.04px; width: 1161.26px; left: 0px; top: 0px;"><div class="scaler" style="height: 1514.04px; width: 1161.26px; transform: scale(1); transform-origin: 0px 0px;"><iframe enable-annotation="enable-annotation" allowfullscreen="allowfullscreen" scrolling="no" class="iframe-fixed visible" tabindex="-1" style="border-bottom: 1px dashed silver; border-top: 1px dashed silver; visibility: visible; width: 1161.26px;" data-src="https://onlinelibrary.wiley.com/reader/content/1616b07440f/10.1111/j.0006-341X.2000.01016.x/format/pdf/OEBPS/pages/2.page.xhtml" data-index="1" data-baseuri="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x" data-loaduri="https://onlinelibrary.wiley.com/reader/content/1616b07440f/10.1111/j.0006-341X.2000.01016.x/format/pdf/OEBPS/pages/2.page.xhtml" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/e0dd2eac-43c2-4321-861f-8f003554f6bb.html" data-viewport-width="632" data-viewport-height="824" current-scale="1.8374328440451229" title="EPUB" aria-label="EPUB"></iframe></div></div><div class="content-doc-frame customScaled" style="transform: none; height: 1514.04px; width: 1175.96px;"><div class="scaler" style="height: 1514.04px; width: 1175.96px;"><div class="page-loading-bar"><div class="page-loading-bar_back"><div class="page-loading-bar_front"></div></div></div><div class="page-placeholder"><svg id="dots" xmlns="http://www.w3.org/2000/svg" width="25%" height="44" viewBox="0 0 164 44" fill="none">
+    <g transform="translate(14 22)">
+        <circle cx="0" cy="0" r="14" fill="#B8B8CC">
+            <animatetransform attributeName="transform" type="scale" begin="-0.375s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"></animatetransform>
+        </circle>
+    </g>
+    <g transform="translate(74 22)">
+        <circle cx="0" cy="0" r="18" fill="#B8B8CC">
+            <animatetransform attributeName="transform" type="scale" begin="-0.25s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"></animatetransform>
+        </circle>
+    </g>
+    <g transform="translate(142 22)">
+        <circle cx="0" cy="0" r="22" fill="#B8B8CC">
+            <animatetransform attributeName="transform" type="scale" begin="-0.125s" calcMode="spline" keySplines="0.3 0 0.7 1;0.3 0 0.7 1" values="0;1;0" keyTimes="0;0.5;1" dur="2s" repeatCount="indefinite"></animatetransform>
+        </circle>
+    </g>
+</svg>
+</div><iframe enable-annotation="enable-annotation" allowfullscreen="allowfullscreen" scrolling="no" class="iframe-fixed" tabindex="-1" style="border-bottom: 1px dashed silver; border-top: 1px dashed silver; visibility: hidden; width: 1175.96px;" data-src="https://onlinelibrary.wiley.com/reader/content/1616b07440f/10.1111/j.0006-341X.2000.01016.x/format/pdf/OEBPS/pages/3.page.xhtml" data-index="2" data-baseuri="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x" data-loaduri="https://onlinelibrary.wiley.com/reader/content/1616b07440f/10.1111/j.0006-341X.2000.01016.x/format/pdf/OEBPS/pages/3.page.xhtml" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/bab2aed0-bb66-46cf-b1b6-2baddf4149ce.html" current-scale="1.8374328440451229"></iframe></div></div><div class="content-doc-frame customScaled" style="transform: none; height: 1514.04px; width: 1161.26px; left: 0px; top: 0px;"><div class="scaler" style="height: 1514.04px; width: 1161.26px; transform: scale(1); transform-origin: 0px 0px;"><iframe enable-annotation="enable-annotation" allowfullscreen="allowfullscreen" scrolling="no" class="iframe-fixed visible" tabindex="-1" style="border-bottom: 1px dashed silver; border-top: 1px dashed silver; visibility: visible; width: 1161.26px;" data-src="https://onlinelibrary.wiley.com/reader/content/1616b07440f/10.1111/j.0006-341X.2000.01016.x/format/pdf/OEBPS/pages/4.page.xhtml" data-index="3" data-baseuri="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x" data-loaduri="https://onlinelibrary.wiley.com/reader/content/1616b07440f/10.1111/j.0006-341X.2000.01016.x/format/pdf/OEBPS/pages/4.page.xhtml" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/e0224f43-818b-4c69-9704-9b2a8508be28.html" data-viewport-width="632" data-viewport-height="824" current-scale="1.8374328440451229" title="EPUB" aria-label="EPUB"></iframe></div></div></div></div></div>
+    </div>
+</div>
+    
+<div id="readium-page-btns" role="region" aria-label="Page Navigation"><!-- Left page -->
+<button tabindex="0" id="left-page-btn" class="page-switch-overlay-icon" type="button" title="Previous Page [left] / [up]" aria-label="Previous Page" style="display: none;">
+<!-- img aria-hidden="true" src="images/pagination1.svg" -->
+<span class="material-icons" aria-hidden="true">chevron_left</span>
+</button>
+  
+<!-- Right page -->
+<button tabindex="0" id="right-page-btn" class="page-switch-overlay-icon" type="button" title="Next Page [right] / [down]" aria-label="Next Page">
+<!-- img aria-hidden="true" src="images/pagination1.svg" -->
+<span class="material-icons" aria-hidden="true">chevron_right</span>
+</button>
+</div></div>
+        <script type="text/javascript">
+            var readerConfig = {"user":{"isLoggedIn":false,"loginLink":"/action/showLogin?redirectUri\u003d%2Fdoi%2Fepdf%2F10.1111%2Fj.0006-341X.2000.01016.x","registerLink":"https://onlinelibrary.wiley.com/action/registration?redirectUri\u003d%2Fdoi%2Fepdf%2F10.1111%2Fj.0006-341X.2000.01016.x"},"readingProgress":{"syncProgress":false,"syncUrl":"/reader/saveProgress","retrieveUrl":"/reader/retrieveProgress"},"doi":"10.1111/j.0006-341X.2000.01016.x","title":"Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood","epubConfig":{"overrideEpubUrlParam":true,"epubUrl":"/reader/content/1616b07440f/10.1111/j.0006-341X.2000.01016.x/format/pdf"},"epubActions":{"offline":{"available":true,"fileSize":"2.4 MB","simultaneousRetrievalsLimit":1},"download":{"files":{"pdf":{"shortCode":"pdf","name":"PDF","available":true,"size":"637.1 KB","url":"/doi/pdfdirect/10.1111/j.0006-341X.2000.01016.x?download\u003dtrue","doi":"10.1111/j.0006-341X.2000.01016.x"}}},"print":true,"shareAccess":true,"preview":false,"rental":false,"print_pdf_pages":50},"displayOptions":{"displayFormat":"auto","displayMode":"scroll-continuous"},"annotationsConfig":{"enabled":false},"materialTabs":{"figuresSuppressed":false,"mediaSuppressed":true,"tablesSuppressed":true,"supplementsSuppressed":false,"linkOutUrl":"/doi/suppl/10.1111/j.0006-341X.2000.01016.x","supplementsLinkOut":false,"openDownloadLinkInNewTab":false},"analyticsConfig":{"enabled":true,"providers":[{"enabled":true,"name":"atm","siteId":"","version":"","url":""}]},"waterMarkConfig":{"enabled":true,"defaultMessage":"15410420, 2004, 56, Downloaded from https://onlinelibrary.wiley.com. By POLITECNICO DI MILANO- on XXX. Re-use and distribution is strictly not permitted, except for Open Access articles","optionalMessage":"","location":"right/left"},"metadataUrl":"/doi/reader/metadata/10.1111/j.0006-341X.2000.01016.x","referencesUrl":"/doi/reader/references/10.1111/j.0006-341X.2000.01016.x","citedByUrl":"/doi/reader/citedBy/10.1111/j.0006-341X.2000.01016.x","figuresUrl":"/doi/reader/figures/10.1111/j.0006-341X.2000.01016.x","tablesUrl":"/doi/reader/tables/10.1111/j.0006-341X.2000.01016.x","mediaUrl":"/doi/reader/media/10.1111/j.0006-341X.2000.01016.x","recommendationsUrl":"/doi/reader/recommended/10.1111/j.0006-341X.2000.01016.x","siteUrl":"/doi/10.1111/j.0006-341X.2000.01016.x","searchUrl":"/reader/search","currentUrl":"https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x","permissionsUrl":"/action/availableUsageRights","consumePermissionsUrl":"/action/consumeUsage","format":"pdf","publicationType":"article","citationsExportUrl":"/action/showCitFormats?doi\u003d10.1111%2Fj.0006-341X.2000.01016.x\u0026mobileUi\u003d0","dbStoreName":"readerOfflineStore","shareAccessUrl":"/action/generateShareUrl","readerSettingsLocalStorageKey":"article_reader_settings","recommendedEnabled":true,"permissionsEnabled":false,"isDragAndDropEnabled":false,"isOfflineSupportedForBrowser":true,"isOfflineDisabled":false,"isDownloadDisabled":false,"isShareDisabled":false,"isPrintDisabled":false,"nodeNavigationDisabled":false,"navigationMode":"PAGEBREAK","usageRightsEnabled":true,"print_pdf_pages":0,"authorizeSharing":"/action/authorizeSharing","shareMode":false,"sharedAccessConfig":{"alwaysDisplaySharingTermsPopup":false,"shareSponsorLink":"https://onlinelibrary.wiley.com/researchers/tools-resources/sharing","hasButton":true,"shareSponsorMessage":"Some features may be limited or disabled","shareMediaMessage":"Some features may be limited or disabled","isShared":false,"isPermissionEnabled":false,"isShareBannerEnabled":false,"isGetAccessButtonVisible":true,"getAccessUrl":"/doi/pdf/10.1111/j.0006-341X.2000.01016.x"},"inDocAdsEnabled":true,"suspendAdsInSinglePagePdfs":true,"adsImpressionDuration":0,"campaignUrl":"/action/showReaderCampaign?doi\u003d10.1111%2Fj.0006-341X.2000.01016.x","eventsConfig":{"readerEventsAnalyticsUrl":"/action/readerEventsAnalytics?doi\u003d10.1111%2Fj.0006-341X.2000.01016.x\u0026format\u003dpdf","adImpressionDuration":5000,"episodeRemainingTime":300000,"enabled":true,"allowedNumOfEventsPerReq":50,"excludedEvents":"read,openLeftMenu"},"content_buffer_size":2000,"isPrintSupportedForBrowser":true,"isMaterialDownloadable":true,"isEpubLazyLoadingEnabled":true,"isPdfLazyLoadingEnabled":true,"loadedPagesLimit":7,"maxPdfKeepSize":20,"switchFormats":{"enabled":false,"current":"pdf","available":{"pdf":{"name":"pdf","url":"/doi/epdf/10.1111/j.0006-341X.2000.01016.x"}}},"supplementsUrl":"/action/showReaderSupplements?doi\u003d10.1111%2Fj.0006-341X.2000.01016.x","tabsSuppressionConfig":{"materialsSuppressed":false,"notesSuppressed":true,"linksSuppressed":false,"infosSuppressed":false},"fetchFiguresFromEpub":false,"mediaPlayersConfig":{"enabled":false,"player":{"enabled":false,"name":"flowplayer","css":"//releases.flowplayer.org/6.0.5/commercial/skin/functional.css","key":"$471173155739872","playerScript":"//releases.flowplayer.org/6.0.5/flowplayer.min.js"}},"adsInclusionEnabled":true,"helpEnabled":false,"profileConfig":{"activeProfile":"DEFAULT","printSuppressed":false,"offlineSuppressed":false,"downloadSuppressed":false,"switchFormatsSuppressed":true,"materialsSuppressed":false,"notesSuppressed":true,"linksSuppressed":false,"infoSuppressed":false,"siteLinkOutSuppressed":false,"accessSharingSuppressed":false},"isReadingFlowEnabled":true,"showCrossmarkButton":false,"restrictContent":false,"restrictCopying":false,"isScitrusHelpGuideEnabled":false,"referencesNumberingSupported":true,"freeToReadConfig":{"learnMoreLink":"","bannerMessage":"Downloading and printing are disabled.","isFreeToRead":false,"isBannerEnabled":true,"isGetAccessButtonVisible":true,"accessUrl":"/doi/ftr/10.1111/j.0006-341X.2000.01016.x"},"doiMappingConfig":{"enabled":false},"termsAndConditionsUrl":"https://onlinelibrary.wiley.com/termsAndConditions"};
+            readerConfig.libraryPath='/reader/library';
+        </script>
+        
+
+<script type="text/javascript">
+    
+    readerConfig.alertPopupMsg = {
+        
+        PRINTING_DISABLED_MESSAGE : "<i class='material-icons'>info_outline</i> <h2>Do not print this page</h2> <h3>To view your printing options, return to the document and click the print option in the menu in the top right corner of the page.</h3>",
+        
+        USER_UNAUTHORIZED: "You do not have the required license. The publication cannot be <span>X</span>.",
+        
+        SHARING_DISABLED: "Sharing access to publications is not currently enabled.",
+        SHARING_UNAUTHORIZED: "This content has license restrictions and cannot be shared via Shared Access.",
+        SHARING_UNAVAILABLE: "This content has license restrictions and cannot be shared via Shared Access.",
+        SHARING_TEMPORARY_ERROR: "<span>X</span> failed. Please try again."
+    };
+
+    LIT.Reader.config = {
+        /* http://requirejs.org/docs/api.html#config-waitSeconds */
+        waitSeconds: 0,
+        config: {
+            'readium_js_viewer/ModuleConfig': {
+                'mathJaxUrl': HTTPServerRootFolder + '/scripts/mathjax/MathJax.min.js',
+                'annotationCSSUrl': HTTPServerRootFolder + '/css/annotations.css',
+                'iframeContentCSSUrl': '/cloud-reader/resources/gen/custom/css/iframe-content.css',
+                'jsLibRoot': HTTPServerRootFolder + '/scripts/zip/',
+                'useSimpleLoader': false,
+                'epubLibraryPath': undefined,
+                'imagePathPrefix': '/cloud-reader/src/',
+                'canHandleUrl': false,
+                'canHandleDirectory': false,
+                'workerUrl': undefined,
+                'epubReadingSystemUrl': undefined,
+                "customConfig": readerConfig
+            }
+        }
+    };
+</script>
+
+<script async="" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/cache-update.js.download" type="text/javascript"></script>
+<script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/readium-js-viewer_all_LITE.js.download" type="text/javascript"></script>
+<script type="text/javascript">
+    require.config(LIT.Reader.config);
+</script>
+        <script async="" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/readium-additional-libs.js.download" type="text/javascript"></script>
+        
+        
+            
+                    <script type="module">
+                        if ('serviceWorker' in navigator && !window.READER_OFFLINE) {
+                            window.addEventListener("load", function (evt) {
+                                
+                                var CACHE_BUSTER_MARKER = 3;
+
+                                var assetsCacheName = 'readerAssetsCache-961372-' + CACHE_BUSTER_MARKER;
+                                var readerContentUrl = window.location.pathname;
+                                import ('/templates/jsp/cloudReader/js/readerServiceWorkerHelper.js').then(function (swHelper) {
+                                    swHelper.registerServiceWorkers(true, readerContentUrl, readerContentPage, assetsCacheName, readerConfig.format);
+                                });
+                            });
+                            
+                            var readerContentPage = "<!DOCTYPE html>"+$('html')[0].outerHTML;
+                        }
+                    </script>
+                
+        
+    <script defer="" src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/beacon.min.js.download" data-cf-beacon="{&quot;rayId&quot;:&quot;69a6651beed6d61c&quot;,&quot;token&quot;:&quot;f3dd54df2ac243bab2129483f57546d1&quot;,&quot;version&quot;:&quot;2021.9.0&quot;,&quot;si&quot;:100}"></script>
+
+
+<script>
+
+(function() {
+    if (!Array.prototype.forEach) {
+        Array.prototype.forEach = function forEach(callback, thisArg) {
+            if (typeof callback !== 'function') {
+                throw new TypeError(callback + ' is not a function');
+            }
+            var array = this;
+            thisArg = thisArg || this;
+            for (var i = 0, l = array.length; i !== l; ++i) {
+                callback.call(thisArg, array[i], i, array);
+            }
+        };
+    }
+    if (!Array.isArray) {
+        Array.isArray = function(arg) {
+            return Object.prototype.toString.call(arg) === '[object Array]';
+        };
+    }
+})();
+WileyDTM = {}
+if(!(window.eReaderPage)){
+	if (window.digitalData ) {
+		try {
+
+			var WileyDTM = {
+				setCookie: function(name, value, seconds) {
+					if (seconds == 'delete') {
+						var expires = "; expires=Thu, 01 Jan 1970 00:00:01 GMT";
+					} else if (seconds) {
+						var date = new Date();
+						date.setTime(date.getTime() + (seconds * 1000));
+						var expires = "; expires=" + date.toGMTString();
+					}
+					/*try at highest scope and iterate lower*/
+					var i = 0;
+					var domain = document.location.hostname;
+					p = domain.split('.');
+					if (seconds == 'delete') {
+						while (i < (p.length - 1)) {
+							domain = p.splice(-1 - (++i)).join('.');
+							document.cookie = name + "=" + value + expires + ";domain=" + domain + ";path=/";
+						}
+					} else {
+						while (i < (p.length - 1) && document.cookie.indexOf(name + '=' + value) == -1) {
+							domain = p.splice(-1 - (++i)).join('.');
+							document.cookie = name + "=" + value + expires + ";domain=" + domain + ";path=/";
+						}
+					}
+				},
+				checkVI: function() {
+					//only return this on the ToC pages. Articles will have a primary volume, other pages will be undefined as well
+					if (digitalData.page && digitalData.page.page && digitalData.page.page == "Table of Contents") {
+						if (typeof(digitalData.publication.group.volume) == "undefined") {
+							return true;
+						}
+					}
+					return false;
+				},
+				isArticle: function() {
+					if (digitalData.publication && digitalData.publication.item) return true;
+					else return false;
+				},
+				hasSeries: function() {
+					if (digitalData.publication && digitalData.publication.series) return true;
+					else return false;
+				},
+				hasGroup: function() {
+					if (digitalData.publication && digitalData.publication.group) return true;
+					else return false;
+				},
+				getPublicationType: function() {
+					if (WileyDTM.hasGroup()) {
+						if (WileyDTM.hasSeries() && digitalData.publication.series.code == "mrwseries") return "mrw";
+						else if (digitalData.publication.group.eisbn) return "book"
+					}
+					if (WileyDTM.hasSeries() && digitalData.publication.series.eissn) return "journal"
+					return false;
+				},
+				getPublicationDOI: function() {
+					if (WileyDTM.hasGroup() && digitalData.publication.group.eisbn) return digitalData.publication.group.doi;
+					if (WileyDTM.hasSeries()) return digitalData.publication.series.doi;
+					return false;
+				},
+				getPublicationTitle: function() {
+					if (WileyDTM.hasGroup() && digitalData.publication.group.eisbn && digitalData.publication.group.title) {
+
+						return digitalData.publication.group.title.replace("&amp;", "&").replace("&apos;", "'").replace("&#233;", "é").replace("&#252;", "ü");
+					}
+					if (WileyDTM.hasSeries() && digitalData.publication.series.title) {
+						return digitalData.publication.series.title.replace("&amp;", "&").replace("&apos;", "'").replace("&#233;", "é").replace("&#252;", "ü");
+					}
+					return false;
+				},
+				getPublicationAccess: function() {
+					if (WileyDTM.hasGroup() && digitalData.publication.group.eisbn) return digitalData.publication.group.access;
+					if (WileyDTM.hasSeries()) return digitalData.publication.series.access;
+					return false;
+				},
+				getJournalCode: function() {
+					if (WileyDTM.getPublicationType() == "journal") return digitalData.publication.series.code;
+					return "";
+				},
+				getArticleFormats: function() {
+					if (WileyDTM.isArticle()) {
+						if (Array.isArray(digitalData.publication.item.formats)) return digitalData.publication.item.formats.join("|").replace("Full text", "HTML")
+
+						else return false;
+					}
+				},
+				getVolumeIssue: function() {
+					if (WileyDTM.hasGroup()) {
+						if (WileyDTM.checkVI()) {
+							return "Virtual Issue"
+						}
+						if (digitalData.publication.group.volume && digitalData.publication.group.issue) {
+							return digitalData.publication.group.volume + "/" + digitalData.publication.group.issue;
+						}
+					}
+					return false;
+
+				},
+				getIssueData: function() {
+					imap = {};
+					if (WileyDTM.getPublicationType() == "journal" && WileyDTM.hasGroup()) {
+						imap.issueTitle = digitalData.publication.group.title;
+						imap.issueDOI = digitalData.publication.group.doi;
+					}
+
+					return imap;
+				},
+				getTaxonomyMap: function() {
+					var tmap = {};
+					tmap.globalSubjects = [];
+					tmap.viCategories = [];
+					tmap.gptZoneName = "";
+					tmap.gptSiteName = "";
+
+					pubTopics = [];
+
+					if (WileyDTM.getPublicationType() == "journal") {
+						pubTopics = digitalData.publication.series.topics;
+						if (WileyDTM.hasGroup() && Array.isArray(digitalData.publication.group.topics)) {
+							digitalData.publication.group.topics.forEach(function(topic) {
+								if (topic.taxonomyUri && topic.taxonomyUri.indexOf("vi-categories") >= 0) {
+									tmap.viCategories.push(topic.topicLabel);
+								}
+							});
+						}
+					} else if (WileyDTM.getPublicationType() == "book") {
+						pubTopics = digitalData.publication.group.topics;
+					}
+
+					if (Array.isArray(pubTopics)) {
+						pubTopics.forEach(function(topic) {
+							if (topic.taxonomyUri) {
+								if (topic.taxonomyUri == "global-subject-codes") {
+									tmap.globalSubjects.push(topic.topicUri);
+								}
+								if (topic.taxonomyUri == "gpt-zonename") {
+									tmap.gptZoneName = topic.topicUri;
+								}
+								if (topic.taxonomyUri == "gpt-sitename") {
+									tmap.gptSiteName = topic.topicUri;
+								}
+							}
+						});
+					}
+					tmap.globalSubjectsString = tmap.globalSubjects.join("|");
+					tmap.viCategoriesString = tmap.viCategories.join("|");
+					return tmap
+				},
+				getIdentities: function() {
+					var imap = {};
+					imap.personUser = "";
+					imap.institutions = [];
+					if (digitalData.identities && Array.isArray(digitalData.identities)) {
+						digitalData.identities.forEach(function(identity) {
+							if (identity.type == "InstitutionUser") {
+								if (Array.isArray(identity.customerRecords)) {
+									identity.customerRecords.forEach(function(cr) {
+										imap.institutions.push(cr.customerDomain + ":" + cr.customerNumber);
+									});
+								}
+							} else if (identity.type == "PersonUser") {
+								if (Array.isArray(identity.customerRecords) && identity.customerRecords.length > 0) {
+									imap.personUser = identity.customerRecords[0].customerDomain + ":" + identity.customerRecords[0].customerNumber
+								}
+							}
+
+						});
+					}
+					imap.institutionsString = imap.institutions.join("|");
+					return imap;
+				},
+				isLoggedIn: function() {
+					if (WileyDTM.getIdentities().personUser) return true;
+					else return false;
+				},
+				getArticleAge: function() {
+					//in days
+					if (WileyDTM.isArticle()) {
+						if (digitalData.publication.item.earliestDate) {
+							if (typeof(Date.parse(digitalData.publication.item.earliestDate)) == "number") {
+								now = new Date();
+								pubDate = Date.parse(digitalData.publication.item.earliestDate);
+
+								timediff = now - Date.parse(digitalData.publication.item.earliestDate);
+								daydiff = Math.floor(timediff / (1000 * 60 * 60 * 24));
+								return daydiff;
+							}
+						}
+					}
+					return false;
+				},
+				getSearchData: function() {
+					searchData = {};
+					if (digitalData.page && digitalData.page.page && (digitalData.page.page == "Search Result" ||
+							digitalData.page.page == "Show Publications")) {
+						if (digitalData.search) {
+							searchData.type = digitalData.search.type;
+
+							if (digitalData.search.resultCounts) {
+								searchData.articleResults = digitalData.search.resultCounts.articlesChapters;
+								searchData.pubResults = digitalData.search.resultCounts.journalTitle;
+							}
+							if (digitalData.search.resultsDisplayed) {
+								searchData.sort = digitalData.search.resultsDisplayed.sort;
+								searchData.startPage = digitalData.search.resultsDisplayed.startPage;
+							}
+							if (digitalData.page.title.indexOf("[Earliest") >= 0) {
+								dfrag = digitalData.page.title.substring(digitalData.page.title.indexOf("[Earliest") + 11);
+								searchData.dateRange = dfrag.substring(0, dfrag.indexOf("]"))
+							}
+							if (digitalData.page.title.indexOf("[Publication Date") >= 0) {
+								searchData.dateRange = "Custom";
+							}
+
+							if (Array.isArray(digitalData.search.fields)) {
+								digitalData.search.fields.forEach(function(field) {
+									if (field.type == "AllField") {
+										searchData.searchTerm = searchData.searchTerm ? searchData.searchTerm : field.term[0];
+									}
+									if (field.type == "ContentGroupKey") {
+										searchData.title = field.term[0];
+									} else if (field.type == "SeriesKey") {
+										searchData.title = field.term[0];
+									}
+
+									if (field.type == "content") {
+										searchData.tab = field.term[0];
+									}
+									if (field.type == "PubType") {
+										searchData.pubType = field.term[0];
+									}
+									if (field.type == "ConceptID") {
+										if (field.term[0] == "15941") {
+											searchData.accessType = "Open Access";
+										} else {
+											searchData.subject = field.term[0];
+										}
+									}
+									if (field.type == "Title") {
+										searchData.advTitle = searchData.advTitle ? searchData.advTitle : field.term[0];
+									}
+									if (field.type == "ContribStored" || field.type == "ContribAuthorStored") {
+										searchData.authorFilter = true;
+									}
+
+									if (field.type == "target") {
+										searchData.mode = field.term[0];
+									}
+
+								});
+
+
+							}
+
+						}
+					}
+					return searchData;
+				}
+			};
+			WileyDTM.data = {
+				articleAge: WileyDTM.getArticleAge(),
+				publicationType: WileyDTM.getPublicationType(),
+				publicationDOI: WileyDTM.getPublicationDOI(),
+				publicationTitle: WileyDTM.getPublicationTitle(),
+				publicationAccess: WileyDTM.getPublicationAccess(),
+				volumeIssue: WileyDTM.getVolumeIssue(),
+				journalCode: WileyDTM.getJournalCode(),
+				tmap: WileyDTM.getTaxonomyMap(),
+				hasGroup: WileyDTM.hasGroup(),
+				issueData: WileyDTM.getIssueData(),
+				identities: WileyDTM.getIdentities(),
+				isLoggedIn: WileyDTM.isLoggedIn(),
+				isVI: WileyDTM.checkVI(),
+				articleFormats: WileyDTM.getArticleFormats(),
+				searchData: WileyDTM.getSearchData()
+			};
+		} catch (e) {
+			WileyDTM = {
+				'DTMError': 'WileyDTM failed: ' + e
+			};
+		}
+	} 
+	else {
+		WileyDTM = {
+			'DTMError': 'digitalData not defined'
+		};
+	}
+}
+</script><script>
+if(window.digitalData && digitalData.search && WileyDTM && WileyDTM.searchData){
+	if(digitalData.page.title.indexOf("[Earliest")>=0){
+		dfrag= digitalData.page.title.substring(digitalData.page.title.indexOf("[Earliest")+11);
+		WileyDTM.searchData.dateRange= dfrag.substring(0, dfrag.indexOf("]"))
+	}
+	if(digitalData.page.title.indexOf("[Publication Date")>=0){
+		WileyDTM.searchData.dateRange= "Custom";
+	}
+}
+
+
+</script><script>
+digitalData = window.digitalData ? digitalData : {};
+digitalData.event = digitalData.event || [];
+var lastEventData;
+
+digitalData.event.push = function (){
+	var newLength =  Array.prototype.push.apply(this,arguments),
+  		ev;
+  
+	if (arguments.length) {
+		ev = arguments[0];
+
+	    if (typeof ev === 'object') {
+			if (typeof ev.eventData === 'object') {
+				// send along entire eventData map
+				_satellite.setVar('eventData',ev.eventData); 
+			        window.console && console.log('Analytics eventData:');
+			        window.console && console.log(ev.eventData);
+        			lastEventData = ev.eventData;
+        
+			}
+			if (typeof ev.eventName === 'string') {
+				_satellite.track(ev.eventName);
+			        window.console && console.log('Analytics eventName:');
+			        window.console && console.log(ev.eventName);
+			}
+			digitalData.event.length=0; // TK refactor this later to handle multiple events
+		} else {
+	       	  _satellite.notify('No Analytics Event object - DataLayer Event requires a root object with eventName and optional eventData')
+	  	}
+	}
+  return newLength;
+ }
+
+
+</script><script>
+if(window.testad){
+	document.getElementsByTagName('DIV')[0].appendChild(testad);
+}
+
+</script><script>
+try{
+  
+  gtagjs = document.createElement('script');
+  gtagjs.setAttribute('src','https://www.googletagmanager.com/gtag/js?id=AW-973395369')
+  gtagjs.setAttribute('async','true')
+  document.getElementsByTagName('head')[0].appendChild(gtagjs);
+
+  dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-973395369');
+  gtag('event', 'page_view', {
+    'send_to': 'AW-973395369',
+    'publication': _satellite.getVar('pubTitle'),
+    'wol_subjects' : WileyDTM.getTaxonomyMap().globalSubjects,
+    'wol_publication_access':_satellite.getVar('publicationAccess')
+  });
+}
+catch(e){
+  
+}
+</script><script>
+try{for(var anchors=document.getElementsByTagName("a"),i=0;i<anchors.length;i++)anchors[i].getAttribute("href").match(/editorialmanager|manuscriptcentral|atyponrex|submission\.wiley\.com|main\.plex/i)&&anchors[i].setAttribute("target","_blank")}catch(e){}
+</script><script>
+!function(e,t,n,i,a,c){e.twq||((i=e.twq=function(){i.exe?i.exe.apply(i,arguments):i.queue.push(arguments)}).version="1.1",i.queue=[],(a=t.createElement(n)).async=!0,a.src="//static.ads-twitter.com/uwt.js",(c=t.getElementsByTagName(n)[0]).parentNode.insertBefore(a,c))}(window,document,"script"),twq("init","o2oym"),twq("track","PageView");
+</script><script>
+!function(e,t,a,l,i,o,n){e.fbq||(i=e.fbq=function(){i.callMethod?i.callMethod.apply(i,arguments):i.queue.push(arguments)},e._fbq||(e._fbq=i),(i.push=i).loaded=!0,i.version="2.0",i.queue=[],(o=t.createElement(a)).async=!0,o.src=l,(n=t.getElementsByTagName(a)[0]).parentNode.insertBefore(o,n))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js"),window.fbq&&fbq("init","263124174624252"),"15318249"!=_satellite.getVar("journalCode")&&"123289503"!=_satellite.getVar("journalCode")||window.fbq&&fbq("init","2240878159265939"),window.fbq&&fbq("trackCustom","WOLPageView",{articleDoi:_satellite.getVar("articleDoi"),subjects:_satellite.getVar("globalSubjectString").split("|"),publicationDoi:_satellite.getVar("pubDoi"),pagePath:_satellite.getVar("pageGroup")+"|"+_satellite.getVar("pageTemplate")+"|"+_satellite.getVar("pageSubtype"),publicationTitle:_satellite.getVar("pubTitle"),publicationType:_satellite.getVar("pubType"),hub:_satellite.getVar("website")});
+</script><script>
+gaLoader=window.gaLoader?window.gaLoader:{},gaLoader.base="UA-68565440-",gaLoader.sites=["anthrosource","aapm","agupubs","aasldpubs","aslopubs","bpspubs","esajournals","physoc","iubmb","ascpt","stemcellsjournals","theoncologist"],gaLoader.accounts=["3","12","2","4","6","11","7","5","8","9","10","14"],gaLoader.load=function(){for(siteID=window._satellite&&_satellite.getVar("website"),siteIndex=-1,accountID="",i=0;i<gaLoader.sites.length;i++)0<=siteID.indexOf(gaLoader.sites[i])&&(siteIndex=gaLoader.accounts[i],accountID=gaLoader.base+siteIndex);var e,a,t,s,o,c,n;0<=siteID.indexOf("awwa")&&(window.customGASite="awwa",accountID="UA-36233426-1"),window._satellite&&"10.1002/(ISSN)1549-490X"==_satellite.getVar("pubDoi")&&(window.customGASite="onco",accountID="UA-68565440-10"),(0<=siteIndex||window.customGASite)&&(e=window,a=document,t="script",s="//www.google-analytics.com/analytics.js",o="ga",e.GoogleAnalyticsObject=o,e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date,c=a.createElement(t),n=a.getElementsByTagName(t)[0],c.async=1,c.src=s,n.parentNode.insertBefore(c,n),window.ga&&(ga("create",accountID,"auto","hubsGA"),window.customGASite&&"awwa"===customGASite?gaLoader.trackHubPV(!1):gaLoader.trackHubPV(!0)))},gaLoader.trackHubPV=function(e){try{if(window.ga){!function(){var e=document.location.search.replace("?","").split("&");for(i=0;i<e.length;i++){var a=e[i].split("=");"campaign"==a[0]&&(ga("hubsGA.set","campaignName",a[1]),ga("hubsGA.set","campaignId",a[1]),ga("hubsGA.set","campaignSource","wiley"),ga("hubsGA.set","campaignMedium","wiley"))}}();var a=document.location.href;_satellite.getVar("pageSubtype")&&"Access Denial"===_satellite.getVar("pageSubtype")&&(a=document.location.protocol+"//"+document.location.host+document.location.pathname+"-accessdenied"+document.location.search+document.location.hash,e&&ga("hubsGA.set","metric1",1)),e&&(_satellite.getVar("pubDoi")&&ga("hubsGA.set","dimension1",_satellite.getVar("pubDoi")),_satellite.getVar("pubTitle")&&ga("hubsGA.set","dimension2",_satellite.getVar("pubTitle")),_satellite.getVar("articleDoi")&&ga("hubsGA.set","dimension3",_satellite.getVar("articleDoi")),_satellite.getVar("articleTitle")&&ga("hubsGA.set","dimension4",_satellite.getVar("articleTitle"))),document.location.href.indexOf("/epdf")<1&&(ga("hubsGA.send","pageview",a),e&&(ga("hubsGA.set","metric1",0),ga("hubsGA.set","metric2",0),ga("hubsGA.set","metric3",0),ga("hubsGA.set","metric5",0)))}}catch(t){}},gaLoader.load();
+</script><script src="./Estimation of Multivariate Frailty Models Using Penalized Partial Likelihood_files/adsct" type="text/javascript"></script><script>_satellite["_runScript1"](function(event, target, Promise) {
+try{ereaderdata=readerAtmEventData,ereaderdata.manuallycalled=!0,digitalData.event.push({eventName:readerAtmEventName,eventData:readerAtmEventData})}catch(e){}
+});</script><script>
+function trackQI(){digitalData=window.digitalData?digitalData:{},digitalData.event=digitalData.event||[],digitalData.event.push({eventData:{surveyID:SurveyResponseID},eventName:"trackSurvey"})}var QICreative="wol2",SurveyResponseID="";window.addEventListener("qsi_js_loaded",trackQI,!1);var QILoader={runQIIntercept:function(t){!function(){var e=function(n,r,a,t){this.get=function(e){e+="=";for(var t=document.cookie.split(";"),n=0,r=t.length;n<r;n++){for(var a=t[n];" "==a.charAt(0);)a=a.substring(1,a.length);if(0==a.indexOf(e))return a.substring(e.length,a.length)}return null},this.set=function(e,t){var n="";(n=new Date).setTime(n.getTime()+6048e5),n="; expires="+n.toGMTString(),document.cookie=e+"="+t+n+"; path=/; "},this.check=function(){var e=this.get(a);if(e)e=e.split(":");else{if(100==n)return!0;"v"==r&&(n=Math.random()>=n/100?0:100),e=[r,n,0],this.set(a,e.join(":"))}var t=e[1];if(100==t)return!0;switch(e[0]){case"v":return!1;case"r":return t=e[2]%Math.floor(100/t),e[2]++,this.set(a,e.join(":")),!t}return!0},this.go=function(){if(this.check()){var e=document.createElement("script");e.type="text/javascript",e.src=t+"&t="+(new Date).getTime(),document.body&&document.body.appendChild(e)}},this.start=function(){this.go()}};try{new e(100,"r","QSI_S_"+t,"//zn8wxbnuhlfeu1aqt-wiley.siteintercept.qualtrics.com/WRSiteInterceptEngine/?Q_SIID="+t+"&Q_LOC="+encodeURIComponent(window.location.href)).start()}catch(i){console.log("error loading intercept: "),console.log(i)}}()},checkOSDFrame:function(){for(nodes=document.getElementsByTagName("iframe"),i=0;i<nodes.length;i++)if("google_osd_static_frame"==nodes.getAttribute("name"))return!0;return!1},runInterceptAfterAds:function(e){QILoader.checkOSDFrame&&(clearInterval(QILoader.QIInterval),QILoader.runQIIntercept(e))},QIInterval:"",start:function(){_satellite.readCookie("randomizeUser")||_satellite.setCookie("randomizeUser",Math.random()),.87<_satellite.readCookie("randomizeUser")||0<=document.location.search.indexOf("surveyon")?(SurveyResponseID=_satellite.readCookie("randomizeUser")*Math.pow(10,16),window.googletag?QILoader.QIInterval=setInterval(function(){QILoader.runInterceptAfterAds("SI_29r6u67C30RWd01")},2e3):QILoader.runQIIntercept("SI_29r6u67C30RWd01")):(_satellite.readCookie("randomizeUser")<=.77&&0<=document.location.pathname.indexOf("author")||0<=document.location.pathname.indexOf("testauthorsurvey"))&&(SurveyResponseID=_satellite.readCookie("randomizeUser")*Math.pow(10,16),window.googletag?QILoader.QIInterval=setInterval(function(){QILoader.runInterceptAfterAds("SI_6P5YYi4DBCWhMVv")},2e3):QILoader.runQIIntercept("SI_6P5YYi4DBCWhMVv"))}};QILoader.start();
+</script><script>
+window.ga&&(ga("set","metric2",1),ga("send","pageview",document.location.href),ga("set","metric2",0));
+</script><script>
+window.fbq&&fbq("trackCustom","FullTextArticle",{articleDoi:_satellite.getVar("articleDoi"),subjects:_satellite.getVar("globalSubjectString").split("|"),publicationDoi:_satellite.getVar("pubDoi"),pagePath:_satellite.getVar("pageGroup")+"|"+_satellite.getVar("pageTemplate")+"|"+_satellite.getVar("pageSubtype"),publicationTitle:_satellite.getVar("pubTitle"),publicationType:_satellite.getVar("pubType"),hub:_satellite.getVar("website")});
+</script><script>
+try{articleAccess=eventData.publication.item.access,metisBase="https://wiley.met.vgwort.de/na/",metisDOI=eventData.publication.item.doi.split("/").join("-");var metisPixel=document.createElement("img");metisFreePage="free"==articleAccess||"open"==articleAccess||"freeToRead"==articleAccess,metisPWPage="full"==articleAccess,publisherID="vgzm.60650-",metisFreePage&&(metisPixel.src=metisBase+publisherID+metisDOI,document.body.appendChild(metisPixel)),metisPWPage&&(metisPixel.src=metisBase+"pw-"+publisherID+metisDOI,document.body.appendChild(metisPixel))}catch(e){}
+</script><script>
+window.ga&&(ga("set","metric2",1),ga("send","pageview",document.location.href),ga("set","metric2",0));
+</script><script>
+window.fbq&&fbq("trackCustom","FullTextArticle",{articleDoi:_satellite.getVar("articleDoi"),subjects:_satellite.getVar("globalSubjectString").split("|"),publicationDoi:_satellite.getVar("pubDoi"),pagePath:_satellite.getVar("pageGroup")+"|"+_satellite.getVar("pageTemplate")+"|"+_satellite.getVar("pageSubtype"),publicationTitle:_satellite.getVar("pubTitle"),publicationType:_satellite.getVar("pubType"),hub:_satellite.getVar("website")});
+</script><script>
+try{articleAccess=eventData.publication.item.access,metisBase="https://wiley.met.vgwort.de/na/",metisDOI=eventData.publication.item.doi.split("/").join("-");var metisPixel=document.createElement("img");metisFreePage="free"==articleAccess||"open"==articleAccess||"freeToRead"==articleAccess,metisPWPage="full"==articleAccess,publisherID="vgzm.60650-",metisFreePage&&(metisPixel.src=metisBase+publisherID+metisDOI,document.body.appendChild(metisPixel)),metisPWPage&&(metisPixel.src=metisBase+"pw-"+publisherID+metisDOI,document.body.appendChild(metisPixel))}catch(e){}
+</script><div class="material-viewer">
+    <nav class="material-viewer_reg_top navbar" role="banner" aria-label="Toolbar">
+        <div class="btn-group material-viewer_top_left">
+            <div class="d-block d-md-none">
+                <div class="element-view">
+                    <div class="grouped">
+                        <button class="btn material-viewer_ctrl_caption" title="Element menu" type="button" tabindex="0">
+                            <span class="icon material-icons">sort</span>
+                        </button>
+                    </div>
+                    <div class="grouped">
+                        <!-- previous figure button -->
+                        <button class="btn material-viewer_ctrl_prev" title="Previous" type="button" tabindex="0">
+                            <span class="icon material-icons flip-horizontal">play_circle_filled</span>
+                        </button>
+                        <!-- next figure button -->
+                        <button class="btn material-viewer_ctrl_next" title="Next" type="button" tabindex="0">
+                            <span class="icon material-icons">play_circle_filled</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid-view">
+                    <button class="btn material-viewer_ctrl_return small" title="Return" type="button" tabindex="0">
+                        <span class="icon material-icons">arrow_back</span>
+                        <span class="text">BACK</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grouped d-none d-md-block">
+                <h2 class="material-viewer_title material-viewer_title_chapter" title="Chapter Title">chapter title
+                    here</h2>
+            </div>
+        </div>
+
+        <div class="btn-group material-viewer_top_center d-none d-md-flex">
+            <div class="element-view flex-container">
+                <div class="grouped">
+                    <h2 class="material-viewer_title material-viewer_title_text" title="Element Title" tabindex="0">figure title
+                        here</h2>
+                </div>
+
+                <div class="grouped download-toggle-hidden">
+                    <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x" target="_blank" class="btn media__download" title="Download element" download="" aria-label="download element" tabindex="0">
+                        <span class="icon material-icons">get_app</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid-view">
+                <div class="grouped dropdown-widget">
+                    <button id="dropdownSort" class="dropdown-trigger btn" title="Select filtering" type="button" tabindex="0" aria-label="select filtering" aria-haspopup="true" aria-expanded="false">
+                        <span class="sorting_title_selection"><span class="text">All Materials</span>&nbsp;(<span class="counter">0</span>)</span>
+                        <span class="animated_arrow_down"></span>
+                    </button>
+
+                    <div class="dropdown-content materialViewer-sorting" aria-labelledby="dropdownSort">
+                        <div class="panels" data-vport="767" data-panel-desktop="materialViewerSorting">
+                            <fieldset class="sorting-list">
+                                <legend class="d-block d-md-none">SHOW</legend>
+                                <input type="radio" name="sorting-type" value="all" id="all-radio" class="on_light_bg" checked="">
+                                <label for="all-radio">
+                                    <span class="text">All materials</span>&nbsp;
+                                    <span class="counter">0</span>
+                                </label>
+
+                                <input type="radio" name="sorting-type" value="figure" id="image-radio" class="on_light_bg">
+                                <label for="image-radio">
+                                    <span class="text">Figures</span>&nbsp;
+                                    <span class="counter">0</span>
+                                </label>
+
+                                <input type="radio" name="sorting-type" value="table" id="table-radio" class="on_light_bg">
+                                <label for="table-radio">
+                                    <span class="text">Tables</span>&nbsp;
+                                    <span class="counter">0</span>
+                                </label>
+
+                                <input type="radio" name="sorting-type" value="video" id="video-radio" class="on_light_bg">
+                                <label for="video-radio">
+                                    <span class="text">Videos</span>&nbsp;
+                                    <span class="counter">0</span>
+                                </label>
+
+                                <input type="radio" name="sorting-type" value="audio" id="audio-radio" class="on_light_bg">
+                                <label for="audio-radio">
+                                    <span class="text">Audio files</span>&nbsp;
+                                    <span class="counter">0</span>
+                                </label>
+
+                                <input type="radio" name="sorting-type" value="code" id="code-radio" class="on_light_bg">
+                                <label for="code-radio">
+                                    <span class="text">Code snippets</span>&nbsp;
+                                    <span class="counter">0</span>
+                                </label>
+
+                                <input type="radio" name="sorting-type" value="supplement" id="supplements-radio" class="on_light_bg">
+                                <label for="supplements-radio">
+                                    <span class="text">Other files</span>&nbsp;
+                                    <span class="counter">0</span>
+                                </label>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group material-viewer_top_right">
+            <div class="grouped element-view material-viewer_zoom d-none d-md-inline-flex">
+
+                <button class="btn zoom-fit width" title="Fit Width" aria-label="fit width">
+                    <span class="icon material-icons">fullscreen</span>
+                </button>
+
+                    <button class="btn zoom-fit height d-none" title="Fit Height" aria-label="fit height">
+                        <span class="icon material-icons">fullscreen_exit</span>
+                    </button>
+
+                <!-- ZOOM OUT button -->
+                <button class="zoom-out btn" title="Zoom Out" type="button" tabindex="0" aria-label="zoon out">
+                    <span class="icon material-icons">remove_circle_outline</span>
+                </button>
+                <!-- ZOOM IN  button -->
+                <button class="zoom-in btn" title="Zoom In" type="button" tabindex="0" aria-label="zoom in">
+                    <span class="icon material-icons">add_circle_outline</span>
+                </button>
+            </div>
+
+            <div class="grouped material-viewer_navigation d-none d-md-inline-flex">
+                <!-- previous figure button -->
+                <button class="btn material-viewer_ctrl_prev" title="Previous" type="button" tabindex="0" aria-label="previous figure">
+                    <span class="icon material-icons flip-horizontal">play_circle_filled</span>
+                </button>
+                <!-- next figure button -->
+                <button class="btn material-viewer_ctrl_next" title="Next" type="button" tabindex="0" aria-label="next figure">
+                    <span class="icon material-icons">play_circle_filled</span>
+                </button>
+            </div>
+
+            <div class="grouped">
+                <div class="element-view">
+                    <button class="btn material-viewer_ctrl_browse" title="Browse all elements" type="button" tabindex="0" aria-label="browse all elements">
+                        <span class="icon reader-material-gallery"></span>
+                    </button>
+                </div>
+
+                <div class="grid-view">
+                    <div class="d-none d-md-inline-block">
+                        <button class="btn material-viewer_ctrl_return small" title="Return" type="button" tabindex="0" aria-label="return">
+                            <span class="icon material-icons">arrow_back</span>
+                            <span class="text">BACK</span>
+                        </button>
+                    </div>
+                    <div class="d-block d-md-none">
+                        <button class="btn material-viewer_ctrl_sorting" title="Browse sorting options" type="button" tabindex="0" aria-label="browse sorting options">
+                            <span class="icon reader-filter"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grouped">
+                <button class="btn material-viewer_ctrl_close small" title="Close viewer" type="button" tabindex="0" data-tooltip-position="bottom" browse="" sorting="" options="">
+                    CLOSE
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="material-viewer_reg_center">
+        <div class="material-viewer_cent_left js-open">
+            <button class="material-viewer_ctrl_caption toggle_sidebar_button btn btn--aside d-none d-md-inline-flex" title="Toggle element details" type="button" tabindex="0" aria-label="toggle element details">
+                <span class="icon reader-double-arrow flip-horizontal"></span>
+            </button>
+            <div class="material-viewer_figCaption">
+                <div class="material-viewer_figCaption_top">
+                    <h3 class="subheader material-viewer_title_text" tabindex="0">figure title here</h3>
+                    <div class="fig-download d-md-none">
+                        <a href="https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.0006-341X.2000.01016.x" target="_blank" class="media__download" title="Download element" role="link" download="" tabindex="0">
+                            <span class="icon material-icons">get_app</span>
+                        </a>
+                    </div>
+                </div>
+                <div id="caption-tab-pane">
+                    <div class="paddedPane mediumText js__caption" tabindex="0"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="material-viewer_cent_center js-open">
+            <div class="material-viewer_hold_fig">
+                <figure class="holder"></figure>
+            </div>
+            <div class="material-viewer_hold_list"></div>
+        </div>
+
+        <div class="material-viewer_cent_right">
+            <div class="scrollingContainer">
+                <h3 class="subTitle sorting_title_selection">All Materials</h3>
+                <h4 class="mediumText d-block d-md-none material-viewer_title_chapter" title="Publication Title">publication
+                    title here</h4>
+                <div class="panels" data-vport="767" data-panel-mobile="materialViewerSorting"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body></html>

@@ -1,3 +1,5 @@
+// Parallel Matricial Product
+
 // [[Rcpp::depends(RcppArmadillo, RcppEigen)]]
 // [[Rcpp::plugins(openmp)]]
 
@@ -8,7 +10,7 @@
 // [[Rcpp::export]]
 SEXP MatProd(const Eigen::Map<Eigen::MatrixXd> A,
                       Eigen::Map<Eigen::MatrixXd> B, 
-                      int n_cores=4){
+                      int n_cores=40){
   
   Eigen::setNbThreads(n_cores);
   Eigen::MatrixXd C = A * B;
