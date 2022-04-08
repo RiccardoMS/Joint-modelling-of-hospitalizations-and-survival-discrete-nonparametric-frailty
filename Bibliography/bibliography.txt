@@ -1,3 +1,0 @@
-https://projecteuclid.org/journals/statistical-science/volume-6/issue-1/That-BLUP-is-a-Good-Thing--The-Estimation-of/10.1214/ss/1177011926.full
-
-https://towardsdatascience.com/maximum-likelihood-ml-vs-reml-78cf79bef2cf
