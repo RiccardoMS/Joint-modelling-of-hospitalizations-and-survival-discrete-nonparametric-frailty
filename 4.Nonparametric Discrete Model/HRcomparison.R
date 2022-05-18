@@ -12,11 +12,11 @@ library(ggplot2)
 library(dplyr)
 
 # Load models
-load("Saved_Extension/NDGaussian.RData")
-load("FFU_ACE_runs/Tenth_run_FFU_ACE/FFU_try.RData")
-load("Saved_Coxme/FinalCoxmeRec.RData")
-load("Saved_Coxme/FinalCoxmeDeath.RData")
-load("Saved_Rondeau/RondeauSummary.RData")
+load("5.Results/Saved_Extension/ND025Gaussian.RData")
+load("5.Results/Ng_runs/Tenth_run/FFU_try.RData")
+load("5.Results/Saved_Coxme/FinalCoxmeRec.RData")
+load("5.Results/Saved_Coxme/FinalCoxmeDeath.RData")
+load("5.Results/Saved_Rondeau/RondeauSummary.RData")
 
 # Build DataFrame for visualization
 Visual <- data.frame() # names: x,l95,hr,up95, modelName,coeffName, procName
@@ -43,7 +43,7 @@ Visual<-rbind(Visual,temp)
 ########## Note: R name of NDUnifrom.RData and NDGaussian.RData is the same (Saved)
 ##########       Keep attention to overwriting data structure when loading
 
-load("Saved_Extension/NDUniform.RData")
+load("Saved_Extension/ND025Uniform.RData")
 final<-Saved[[length(Saved)]]
 temp1 <- data.frame(x=rep(5,4),l95=summary(final$modelR)$conf.int[,3],
                     hr=summary(final$modelR)$conf.int[,1],
