@@ -40,6 +40,9 @@ temp2 <- data.frame(x=rep(4,4),l95=summary(final$modelT)$conf.int[,3],
 temp<-rbind(temp1,temp2)
 Visual<-rbind(Visual,temp)
 
+########## Note: R name of NDUnifrom.RData and NDGaussian.RData is the same (Saved)
+##########       Keep attention to overwriting data structure when loading
+
 load("Saved_Extension/NDUniform.RData")
 final<-Saved[[length(Saved)]]
 temp1 <- data.frame(x=rep(5,4),l95=summary(final$modelR)$conf.int[,3],
