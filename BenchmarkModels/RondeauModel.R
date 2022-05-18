@@ -1,12 +1,15 @@
-######################## JOINT FRAILTY MODEL by Rondeau,2007 ###################################
+############################################################################################
+######################## JOINT FRAILTY MODEL by Rondeau et al. #############################
+############################################################################################
+
 ## Load packages
 rm(list = ls())
 library(data.table)
 library(frailtypack)
 
 ## load data
-load("10_days_of_Hell/dataRecHell.RData")
-load("10_days_of_Hell/dataDeathHell.RData")
+load("dataRec.RData")
+load("dataDeath.RData")
 
 ## Arrange variables
 data$COD_REG= factor(data$COD_REG)

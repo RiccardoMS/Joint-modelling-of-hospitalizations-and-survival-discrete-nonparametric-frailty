@@ -16,8 +16,8 @@ library(survminer)
 library(ggplot2)
 
 ## load data
-load("10_days_of_Hell/dataRecHell.RData")
-load("10_days_of_Hell/dataDeathHell.RData")
+load("dataRec.RData")
+load("dataDeath.RData")
 
 ## Arrange variables
 data$COD_REG= factor(data$COD_REG)

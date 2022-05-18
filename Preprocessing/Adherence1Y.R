@@ -10,7 +10,7 @@ rm( list = ls ())
 library(data.table)
 
 # load chosen drug subdataset
-load("C:/Users/aughi/Desktop/TESI/Code/Split_Dataset/ACE_Inhibitors.RData")
+load("ACE_Inhibitors.RData")
 
 # Compute Adherence
 new = subset(new,!(tipo_prest==30 & is.na(qt_pharma)))
@@ -59,4 +59,4 @@ new[ADERENZA>=0.5 & ADERENZA<0.75]$ADH_LEV=3
 new[ADERENZA>=0.75]$ADH_LEV=4
 
 # save
-save(new, file="With_Adherence_Dataset/ACE_Inhibitors.RData")
+save(new, file="ACE_Inhibitors_1YA.RData")

@@ -17,8 +17,8 @@ library(mvtnorm)
 library(survminer)
 
 ## data loading
-load("10_days_of_Hell/dataRecHell.RData")
-load("10_days_of_Hell/dataDeathHell.RData")
+load("dataRec.RData")
+load("dataDeath.RData")
 
 ## data preprocessing
 # ordering (not necessary?)

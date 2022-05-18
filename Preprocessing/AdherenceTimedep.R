@@ -82,6 +82,7 @@ for (i in 1:length ( codici )){
   }
 }
 data[,ADERENTE:=ifelse(ADERENZA>0.8,1,0)]
+
 ##########################################################################################
 data<-data[!(is.na(hosp)),]
 ## Pass to gap times between events
@@ -92,8 +93,8 @@ data<-data[(!is.na(GapEvent) & GapEvent!=0)]
 # data for terminal events
 dataDeath <- data[event==0]
 
-save(data, file="dataRecTimeDep.RData")
-save(dataDeath, file="dataDeathTimeDep.RData")
+save(data, file="dataRec.RData")
+save(dataDeath, file="dataDeath.RData")
 
 ## remove unused structures
 rm(new)

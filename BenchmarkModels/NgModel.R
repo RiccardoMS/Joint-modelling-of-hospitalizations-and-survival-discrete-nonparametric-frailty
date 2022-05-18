@@ -1,6 +1,6 @@
-##################################################
-#        Ng, Tawiah, MacLachlan, Gopalan         #
-##################################################
+############################################################################################
+##################        Ng, Tawiah, MacLachlan, Gopalan         ##########################
+############################################################################################
 
 # Load packages
 print("load packages")
@@ -13,7 +13,7 @@ print("load data")
 load("dataRec.RData")
 load("dataDeath.RData")
 
-# RCpp function to speed up matrix multiplication
+# RCpp function to speed up matrix multiplication (check functions path)
 print("load cpp functions")
 library(Rcpp)
 sourceCpp("MatProd.cpp")

@@ -23,4 +23,4 @@ new = selection[(COD_REG %in% patients & tipo_prest==41)|(COD_REG %in% patients 
 unique(new$classe_pharma)
 
 ## save
-save(new, file="Split_Dataset_FFU/ACE_Inhibitors.RData")
+save(new, file="ACE_Inhibitors.RData")

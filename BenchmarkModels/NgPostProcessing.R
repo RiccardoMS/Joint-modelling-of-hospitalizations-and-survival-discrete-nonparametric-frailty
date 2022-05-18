@@ -12,44 +12,44 @@ library(latex2exp)
 ## Results Data frame
 loadData=TRUE
 if(loadData){
-load("10_days_of_Hell/Ng_runs/First_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/First_run/Phi.RData")
+load("Ng_runs/First_run/Omega.RData")
+load("Ng_runs/First_run/Phi.RData")
 Omega1<-Omega0
 Phi1  <-Phi0
-load("10_days_of_Hell/Ng_runs/Second_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/Second_run/Phi.RData")
+load("Ng_runs/Second_run/Omega.RData")
+load("Ng_runs/Second_run/Phi.RData")
 Omega2<-Omega0
 Phi2  <-Phi0
-load("10_days_of_Hell/Ng_runs/Third_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/Third_run/Phi.RData")
+load("Ng_runs/Third_run/Omega.RData")
+load("Ng_runs/Third_run/Phi.RData")
 Omega3<-Omega0
 Phi3  <-Phi0
-load("10_days_of_Hell/Ng_runs/Fourth_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/Fourth_run/Phi.RData")
+load("Ng_runs/Fourth_run/Omega.RData")
+load("Ng_runs/Fourth_run/Phi.RData")
 Omega4<-Omega0
 Phi4  <-Phi0
-load("10_days_of_Hell/Ng_runs/Fifth_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/Fifth_run/Phi.RData")
+load("Ng_runs/Fifth_run/Omega.RData")
+load("Ng_runs/Fifth_run/Phi.RData")
 Omega5<-Omega0
 Phi5  <-Phi0
-load("10_days_of_Hell/Ng_runs/Sixth_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/Sixth_run/Phi.RData")
+load("Ng_runs/Sixth_run/Omega.RData")
+load("Ng_runs/Sixth_run/Phi.RData")
 Omega6<-Omega0
 Phi6  <-Phi0
-load("10_days_of_Hell/Ng_runs/Seventh_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/Seventh_run/Phi.RData")
+load("Ng_runs/Seventh_run/Omega.RData")
+load("Ng_runs/Seventh_run/Phi.RData")
 Omega7<-Omega0
 Phi7  <-Phi0
-load("10_days_of_Hell/Ng_runs/Eigth_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/Eigth_run/Phi.RData")
+load("Ng_runs/Eigth_run/Omega.RData")
+load("Ng_runs/Eigth_run/Phi.RData")
 Omega8<-Omega0
 Phi8  <-Phi0
-load("10_days_of_Hell/Ng_runs/Ninth_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/Ninth_run/Phi.RData")
+load("Ng_runs/Ninth_run/Omega.RData")
+load("Ng_runs/Ninth_run/Phi.RData")
 Omega9<-Omega0
 Phi9  <-Phi0
-load("10_days_of_Hell/Ng_runs/Tenth_run/Omega.RData")
-load("10_days_of_Hell/Ng_runs/Tenth_run/Phi.RData")
+load("Ng_runs/Tenth_run/Omega.RData")
+load("Ng_runs/Tenth_run/Phi.RData")
 Omega10<-Omega0
 Phi10  <-Phi0
 NgResults=data.frame()

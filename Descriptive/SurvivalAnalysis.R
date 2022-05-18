@@ -18,7 +18,7 @@ library(survminer)
 library(ggplot2)
 
 ## load dataset
-load("With_Adherence_Dataset_FFU/ACE_Inhibitors.RData")
+load("ACE_Inhibitors_1YA.RData")
 
 ## arrange Dataset
 # total number of hospitalizations
